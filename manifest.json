@@ -1,0 +1,12 @@
+{
+  "name": "رفيق الطالب",
+  "short_name": "رفيق الطالب",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0F2A20",
+  "theme_color": "#0F2A20",
+  "icons": [
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
