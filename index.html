@@ -16,6 +16,7 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&family=Reem+Kufi:wght@500;700&display=swap" rel="stylesheet">
 <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-auth-compat.js"></script>
 <style>
   :root{
     --bg1:#0A1128;--bg2:#0E1B3D;
@@ -270,6 +271,7 @@ body::before{
   .study-stats-card{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px}.study-stat{padding:12px 8px;text-align:center;background:rgba(3,20,42,.55);border:1px solid rgba(32,217,255,.12);border-radius:15px}.study-stat b{display:block;font:700 18px 'IBM Plex Mono';color:#20D9FF}.study-stat span{font-size:10.5px;color:#7898B8}
   .course-row-clickable{cursor:pointer;transition:.16s}.course-row-clickable:hover{background:rgba(32,217,255,.07)!important}.curric tr.course-row-clickable{cursor:pointer;transition:.16s}.curric tr.course-row-clickable:hover{background:rgba(32,217,255,.07)}.course-open{margin-inline-start:auto;color:#20D9FF;font-size:11px;font-weight:700;opacity:.8}
   .subject-modal,.quiz-modal{position:fixed;inset:0;z-index:80;display:none}.subject-modal.open,.quiz-modal.open{display:block}.subject-modal-backdrop{position:absolute;inset:0;background:rgba(1,7,18,.72);backdrop-filter:blur(8px)}.subject-modal-card{position:relative;width:min(calc(100% - 26px),620px);max-height:min(86vh,760px);overflow:auto;margin:7vh auto 0;background:linear-gradient(145deg,rgba(6,35,72,.98),rgba(3,18,39,.99));border:1px solid rgba(32,217,255,.2);border-radius:24px;padding:20px;box-shadow:0 25px 80px rgba(0,0,0,.6)}.modal-close{position:absolute;top:10px;inset-inline-end:12px;width:36px;height:36px;border:1px solid rgba(255,255,255,.12);border-radius:50%;background:rgba(255,255,255,.06);color:#dff8ff;font-size:25px;cursor:pointer}.subject-title{padding-inline-end:40px}.subject-title h2{margin:0 0 3px;font:700 22px var(--display);color:#fff}.subject-title p{margin:0;color:#8eabc6;font-size:12px}.subject-progress{margin:18px 0;padding:15px;border:1px solid rgba(32,217,255,.13);border-radius:17px;background:rgba(2,16,34,.45)}.subject-progress-head{display:flex;justify-content:space-between;align-items:center;font-size:12px;margin-bottom:9px}.subject-progress-head b{color:#20D9FF}.progress-range{width:100%;accent-color:#20D9FF}.subject-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:12px}.subject-actions button{border:1px solid rgba(32,217,255,.16);border-radius:13px;padding:12px 8px;background:rgba(32,217,255,.07);color:#e8f8ff;font:inherit;font-weight:700;cursor:pointer}.subject-actions button.primary{background:linear-gradient(135deg,#0789F2,#20D9FF);color:#031321;border:none}.subject-links{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}.subject-links button{border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.045);color:#a9c3dc;border-radius:12px;padding:9px 5px;font:inherit;font-size:11px;cursor:pointer}.quiz-q{padding:14px;border:1px solid rgba(32,217,255,.13);border-radius:16px;margin:10px 0;background:rgba(2,16,34,.45)}.quiz-q h3{font-size:14px;margin:0 0 10px}.quiz-options{display:grid;gap:7px}.quiz-option{display:block;padding:10px;border:1px solid rgba(255,255,255,.1);border-radius:11px;background:rgba(255,255,255,.035);cursor:pointer;font-size:12.5px}.quiz-option input{margin-inline-end:7px;accent-color:#20D9FF}.quiz-submit{margin-top:10px}.quiz-result{padding:15px;border-radius:16px;background:rgba(32,217,255,.08);border:1px solid rgba(32,217,255,.2);text-align:center}.quiz-result b{font:700 26px 'IBM Plex Mono';color:#20D9FF}.quiz-loading{text-align:center;padding:35px;color:#9bb7d1}.pomodoro-card{margin-top:16px;padding:16px;border-radius:19px;border:1px solid rgba(32,217,255,.15);background:linear-gradient(145deg,rgba(7,39,79,.72),rgba(3,20,43,.72));text-align:center}.pomodoro-head{display:flex;justify-content:space-between;align-items:center;text-align:start}.pomodoro-head b{display:block;font-size:14px}.pomodoro-head span:not(.pomodoro-badge){display:block;color:#7898B8;font-size:10.5px}.pomodoro-badge{padding:4px 9px;border-radius:999px;background:rgba(32,217,255,.1);color:#20D9FF;font-size:10px}.pomodoro-time{font:700 48px/1.15 'IBM Plex Mono';letter-spacing:1px;margin:12px 0 7px;color:#F2FBFF}.pomodoro-progress{height:6px;background:rgba(255,255,255,.07);border-radius:999px;overflow:hidden}.pomodoro-progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,#0789F2,#20D9FF);transition:width .4s}.pomodoro-actions{display:flex;gap:8px;margin-top:12px}.pomodoro-actions .btn{flex:1}.pomodoro-presets{display:flex;justify-content:center;gap:6px;margin-top:10px;overflow:auto}.pomodoro-presets .chip{font-size:11px;padding:6px 10px}.pomodoro-meta{display:flex;justify-content:space-around;color:#7898B8;font-size:10.5px;margin-top:11px}.pomodoro-meta b{color:#c9eaff}.ai-quick-actions{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:9px}.ai-quick-actions button{border:1px solid rgba(32,217,255,.13);background:rgba(32,217,255,.06);color:#b8d9ed;border-radius:12px;padding:9px 4px;font:inherit;font-size:10.5px;cursor:pointer}.ai-quick-actions button:hover{background:rgba(32,217,255,.11)}
+  .account-card{margin:0 0 16px;padding:15px;border-radius:18px;border:1px solid rgba(32,217,255,.16);background:linear-gradient(145deg,rgba(7,39,79,.72),rgba(3,20,43,.72));display:flex;align-items:center;justify-content:space-between;gap:12px}.account-info{min-width:0}.account-info b{display:block;font-size:13px;color:#fff}.account-info span{display:block;color:#7898B8;font-size:10.5px;margin-top:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.account-actions{display:flex;gap:7px;flex-shrink:0}.account-actions button{border:1px solid rgba(32,217,255,.18);background:rgba(32,217,255,.07);color:#dff8ff;border-radius:11px;padding:8px 10px;font:inherit;font-size:11px;cursor:pointer}.account-actions .primary{background:linear-gradient(135deg,#0789F2,#20D9FF);color:#031321;border:0}.auth-modal{position:fixed;inset:0;z-index:100;display:none}.auth-modal.open{display:block}.auth-card{position:relative;width:min(calc(100% - 28px),420px);margin:12vh auto 0;background:linear-gradient(145deg,rgba(6,35,72,.99),rgba(3,18,39,.99));border:1px solid rgba(32,217,255,.2);border-radius:22px;padding:20px;box-shadow:0 25px 80px rgba(0,0,0,.6)}.auth-card h2{margin:0 0 5px;font-size:21px}.auth-card p{margin:0 0 15px;color:#8eabc6;font-size:11px}.auth-error{color:#ff8c9a;font-size:11px;margin-top:8px;min-height:16px}.auth-note{color:#7898B8;font-size:10px;margin-top:10px;line-height:1.6}.auth-card .field{margin-bottom:10px}.auth-card .btn{width:100%;margin-top:5px}.auth-divider{display:flex;align-items:center;gap:8px;color:#6685a4;font-size:10px;margin:14px 0}.auth-divider:before,.auth-divider:after{content:"";height:1px;background:rgba(255,255,255,.08);flex:1}.auth-link{border:0;background:none;color:#20D9FF;font:inherit;font-size:11px;cursor:pointer;padding:5px}
   @media(max-width:520px){.progress-dashboard{grid-template-columns:1fr 1fr}.subject-actions{grid-template-columns:1fr 1fr}.ai-quick-actions{grid-template-columns:1fr 1fr}.ai-quick-actions button:last-child{grid-column:1/-1}.study-stats-card{grid-template-columns:repeat(3,1fr)}}
 
 </style>
@@ -321,6 +323,7 @@ body::before{
       <h2 id="homeGreeting">أهلاً فيك 👋</h2>
       <p>خطوة صغيرة كل يوم بتصنع فرق كبير بآخر الفصل</p>
     </div>
+    <div class="account-card" id="accountCard"><div class="account-info"><b id="accountTitle">حساب الطالب</b><span id="accountEmail">سجّل دخولك لحفظ تقدمك على أي جهاز</span></div><div class="account-actions"><button class="primary" id="accountBtn" onclick="openAuthModal()">تسجيل الدخول</button></div></div>
     <div class="section-label">تقدمك الدراسي 📊</div>
     <div class="progress-dashboard" id="progressDashboard"></div>
     <div class="section-label">مذاكرتك هذا الأسبوع ⏱️</div>
@@ -337,6 +340,8 @@ body::before{
     <div class="section-label">نصيحة اليوم 💡</div>
     <div class="tip-card"><div id="tipOfDay">لا تؤجل اللي تقدر تعمله اليوم إلى بكرا.</div></div>
   </div>
+
+  <div class="auth-modal" id="authModal" aria-hidden="true"><div class="subject-modal-backdrop" onclick="closeAuthModal()"></div><div class="auth-card" role="dialog" aria-modal="true"><button class="modal-close" onclick="closeAuthModal()" aria-label="إغلاق">×</button><h2 id="authTitle">حساب الطالب 🔐</h2><p id="authSubtitle">أنشئ حسابًا لتحفظ تقدمك وساعات مذاكرتك في Firebase.</p><div class="field"><label>البريد الإلكتروني</label><input id="authEmail" type="email" placeholder="student@example.com" autocomplete="email"></div><div class="field"><label>كلمة المرور</label><input id="authPassword" type="password" placeholder="6 أحرف على الأقل" autocomplete="current-password"></div><button class="btn" id="authSubmit" onclick="submitAuth()">تسجيل الدخول</button><div class="auth-error" id="authError"></div><div class="auth-divider">أو</div><button class="auth-link" id="authModeToggle" onclick="toggleAuthMode()">ليس لديك حساب؟ إنشاء حساب جديد</button><div class="auth-note">تقدم المواد وسجل جلسات المذاكرة مرتبطان بحسابك، وليس بالجهاز فقط.</div></div></div>
 
   <div class="subject-modal" id="subjectModal" aria-hidden="true">
     <div class="subject-modal-backdrop" onclick="closeSubjectModal()"></div>
@@ -506,6 +511,11 @@ const firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
+const auth = firebase.auth();
+let currentUser = null;
+let progressSyncTimer = null;
+let studySyncTimer = null;
+let remoteProgressLoaded = false;
 
 // حط مفتاح API الخاص فيك من Google AI Studio هون (مجاني تماماً بدون بطاقة، من aistudio.google.com)
 // تنبيه: أي حد يفتح كود هاد الملف يقدر يشوف المفتاح ويستخدمه — خيار مقصود اخترناه للبساطة.
@@ -737,6 +747,7 @@ function selectTrack(t){
   document.querySelectorAll('.track-chip').forEach(c => c.classList.toggle('active', c.dataset.track === t));
   updateScopeUI();
   rememberTrack(t);
+  queueProgressSync();
   renderAll(); renderProgressDashboard();
 }
 function selectYear(y){
@@ -744,6 +755,7 @@ function selectYear(y){
   document.querySelectorAll('.year-chip').forEach(c => c.classList.toggle('active', c.dataset.year === y));
   updateScopeUI();
   rememberYear(y);
+  queueProgressSync();
   renderAll(); renderProgressDashboard();
 }
 function selectSemester(s){
@@ -751,6 +763,7 @@ function selectSemester(s){
   document.querySelectorAll('.sem-chip').forEach(c => c.classList.toggle('active', c.dataset.sem === s));
   updateScopeUI();
   rememberSemester(s);
+  queueProgressSync();
   renderAll(); renderProgressDashboard();
 }
 function selectPlanVersion(p){
@@ -758,6 +771,7 @@ function selectPlanVersion(p){
   document.querySelectorAll('.plan-chip').forEach(c => c.classList.toggle('active', c.dataset.plan === p));
   updateScopeUI();
   rememberPlanVersion(p);
+  queueProgressSync();
   renderProgressDashboard();
 }
 document.querySelectorAll('.plan-chip').forEach(c => c.addEventListener('click', () => selectPlanVersion(c.dataset.plan)));
@@ -1301,9 +1315,55 @@ let pomodoro = { minutes:25, seconds:0, running:false, mode:'study', interval:nu
 let activeQuiz = null;
 
 function getProgress(){ try{return JSON.parse(localStorage.getItem(PROGRESS_KEY)||'{}')}catch(e){return {}} }
-function setProgress(course,value){ const p=getProgress(); p[course]=Math.max(0,Math.min(100,Number(value)||0)); localStorage.setItem(PROGRESS_KEY,JSON.stringify(p)); renderProgressDashboard(); }
+function setProgress(course,value){ const p=getProgress(); p[course]=Math.max(0,Math.min(100,Number(value)||0)); localStorage.setItem(PROGRESS_KEY,JSON.stringify(p)); renderProgressDashboard(); queueProgressSync(); }
 function getStudyLog(){ try{return JSON.parse(localStorage.getItem(STUDY_KEY)||'[]')}catch(e){return []} }
-function addStudyMinutes(minutes){ if(!minutes) return; const log=getStudyLog(); const today=new Date().toISOString().slice(0,10); log.push({date:today,minutes:Number(minutes)}); localStorage.setItem(STUDY_KEY,JSON.stringify(log.slice(-500))); renderStudyStats(); }
+function addStudyMinutes(minutes){ if(!minutes) return; const log=getStudyLog(); const today=new Date().toISOString().slice(0,10); log.push({date:today,minutes:Number(minutes)}); const trimmed=log.slice(-500); localStorage.setItem(STUDY_KEY,JSON.stringify(trimmed)); renderStudyStats(); queueStudySync(); }
+
+// ===== مزامنة تقدم الطالب مع حساب Firebase =====
+function studentDoc(){ return currentUser ? db.collection('studentProgress').doc(currentUser.uid) : null; }
+async function loadStudentProgress(){
+  if(!currentUser) return;
+  try{
+    const snap=await studentDoc().get();
+    if(snap.exists){
+      const d=snap.data()||{};
+      if(d.progress && typeof d.progress==='object') localStorage.setItem(PROGRESS_KEY,JSON.stringify(d.progress));
+      if(Array.isArray(d.studyLog)) localStorage.setItem(STUDY_KEY,JSON.stringify(d.studyLog.slice(-500)));
+      if(d.track) localStorage.setItem('my-track',d.track);
+      if(d.year) localStorage.setItem('my-year',d.year);
+      if(d.semester) localStorage.setItem('my-semester',d.semester);
+      currentTrack=localStorage.getItem('my-track')||currentTrack; currentYear=localStorage.getItem('my-year')||currentYear; currentSemester=localStorage.getItem('my-semester')||currentSemester;
+      updateScopeUI();
+    } else { await syncStudentProgress(); }
+    remoteProgressLoaded=true; renderProgressDashboard(); renderStudyStats();
+  }catch(e){ console.warn('تعذر تحميل تقدم الطالب',e); }
+}
+function syncStudentProgress(){
+  if(!currentUser) return Promise.resolve();
+  return studentDoc().set({progress:getProgress(),studyLog:getStudyLog().slice(-500),track:currentTrack,year:currentYear,semester:currentSemester,updatedAt:firebase.firestore.FieldValue.serverTimestamp()},{merge:true});
+}
+function queueProgressSync(){ if(!currentUser) return; clearTimeout(progressSyncTimer); progressSyncTimer=setTimeout(()=>syncStudentProgress().catch(console.warn),500); }
+function queueStudySync(){ if(!currentUser) return; clearTimeout(studySyncTimer); studySyncTimer=setTimeout(()=>syncStudentProgress().catch(console.warn),500); }
+
+let authMode='login';
+function openAuthModal(){const m=document.getElementById('authModal');m.classList.add('open');m.setAttribute('aria-hidden','false');document.getElementById('authError').textContent='';}
+function closeAuthModal(){const m=document.getElementById('authModal');m.classList.remove('open');m.setAttribute('aria-hidden','true');}
+function toggleAuthMode(){authMode=authMode==='login'?'signup':'login';document.getElementById('authTitle').textContent=authMode==='login'?'حساب الطالب 🔐':'إنشاء حساب طالب 🧑‍🎓';document.getElementById('authSubtitle').textContent=authMode==='login'?'سجّل دخولك لاستعادة تقدمك وساعات مذاكرتك.':'أنشئ حسابًا لتحفظ تقدمك وساعات مذاكرتك في Firebase.';document.getElementById('authSubmit').textContent=authMode==='login'?'تسجيل الدخول':'إنشاء الحساب';document.getElementById('authModeToggle').textContent=authMode==='login'?'ليس لديك حساب؟ إنشاء حساب جديد':'لديك حساب؟ تسجيل الدخول';document.getElementById('authError').textContent='';}
+async function submitAuth(){
+  const email=document.getElementById('authEmail').value.trim(), password=document.getElementById('authPassword').value;
+  const err=document.getElementById('authError'); err.textContent='';
+  if(!email||password.length<6){err.textContent='أدخل بريدًا صحيحًا وكلمة مرور من 6 أحرف على الأقل.';return;}
+  const btn=document.getElementById('authSubmit'); btn.disabled=true; btn.textContent='جاري المعالجة...';
+  try{ if(authMode==='login') await auth.signInWithEmailAndPassword(email,password); else await auth.createUserWithEmailAndPassword(email,password); closeAuthModal(); }
+  catch(e){ const map={'auth/invalid-credential':'البريد أو كلمة المرور غير صحيحة.','auth/email-already-in-use':'هذا البريد مسجل مسبقًا.','auth/invalid-email':'البريد الإلكتروني غير صحيح.','auth/weak-password':'كلمة المرور ضعيفة.','auth/network-request-failed':'تحقق من اتصال الإنترنت.'}; err.textContent=map[e.code]||'حدث خطأ أثناء تسجيل الدخول.'; }
+  finally{btn.disabled=false;btn.textContent=authMode==='login'?'تسجيل الدخول':'إنشاء الحساب';}
+}
+function updateAccountUI(){
+  const title=document.getElementById('accountTitle'), email=document.getElementById('accountEmail'), btn=document.getElementById('accountBtn'); if(!title)return;
+  if(currentUser){ title.textContent='حساب الطالب ✓'; email.textContent=currentUser.email||'الحساب متصل'; btn.textContent='تسجيل الخروج'; btn.onclick=()=>auth.signOut(); }
+  else{ title.textContent='حساب الطالب'; email.textContent='سجّل دخولك لحفظ تقدمك على أي جهاز'; btn.textContent='تسجيل الدخول'; btn.onclick=openAuthModal; }
+}
+auth.onAuthStateChanged(async user=>{ currentUser=user; updateAccountUI(); if(user){ await loadStudentProgress(); } });
 function currentCourses(){
   const source=currentPlanVersion==='legacy'?LEGACY_CURRICULA[currentTrack]:CURRICULA[currentTrack];
   if(currentTrack==='general'||!source) return [];
