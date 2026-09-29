@@ -149,6 +149,119 @@
   .curric-total{margin-top:10px;font-size:13px;color:var(--muted);text-align:left}.curric-total span{color:#fff;font-weight:700}
   .footer-credit{text-align:center;margin-top:8px;padding-top:14px;font-size:12px;color:rgba(234,241,255,.4)}
   @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.brand-mark .trace{stroke-dashoffset:0}}
+
+/* ===== رفيق الطالب — visual identity v2 ===== */
+:root{
+  --bg1:#020A18;
+  --bg2:#061A38;
+  --bg3:#031126;
+  --glass:rgba(7,31,67,.72);
+  --glass-strong:rgba(8,36,78,.90);
+  --glass-border:rgba(56,214,255,.20);
+  --ink:#F3F8FF;
+  --muted:#8EA8C9;
+  --accent:#159CFF;
+  --accent2:#20D9FF;
+  --accent-ink:#C9EEFF;
+  --done:#38E0A0;
+  --danger:#FF7180;
+  --r-lg:24px;--r-md:17px;--r-sm:12px;
+  --shadow-md:0 22px 55px rgba(0,5,20,.55);
+}
+html{scroll-behavior:smooth}
+body{
+  background:
+    radial-gradient(600px 430px at 50% -12%,rgba(20,156,255,.25),transparent 62%),
+    radial-gradient(520px 420px at 100% 34%,rgba(32,217,255,.10),transparent 65%),
+    radial-gradient(480px 380px at 0 72%,rgba(18,90,180,.13),transparent 65%),
+    linear-gradient(180deg,var(--bg1) 0%,var(--bg2) 58%,var(--bg3) 100%);
+  padding:0 12px 125px;
+}
+body::before{
+  opacity:.72;
+  background-image:
+    linear-gradient(rgba(32,217,255,.055) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(32,217,255,.055) 1px,transparent 1px),
+    radial-gradient(circle at 15% 20%,rgba(32,217,255,.18) 0 1px,transparent 2px),
+    radial-gradient(circle at 82% 35%,rgba(21,156,255,.20) 0 1px,transparent 2px);
+  background-size:46px 46px,46px 46px,180px 180px,220px 220px;
+  -webkit-mask-image:linear-gradient(#000,rgba(0,0,0,.55) 72%,transparent 100%);
+  mask-image:linear-gradient(#000,rgba(0,0,0,.55) 72%,transparent 100%);
+}
+.wrap{max-width:720px}
+.app-head{
+  position:relative;padding:18px 4px 15px;margin-bottom:10px;
+  background:linear-gradient(135deg,rgba(8,39,82,.72),rgba(3,18,43,.45));
+  border:1px solid rgba(32,217,255,.12);border-radius:0 0 24px 24px;
+  box-shadow:0 14px 38px rgba(0,0,0,.18);
+}
+.app-head::after{content:"";position:absolute;inset:auto 12% -1px 12%;height:1px;background:linear-gradient(90deg,transparent,var(--accent2),transparent);opacity:.55}
+.brand-row{gap:11px}
+.brand-mark{
+  width:55px;height:55px;border-radius:17px;padding:2px;overflow:hidden;
+  background:linear-gradient(145deg,#19D8FF,#0878EA 65%,#09265C);
+  border:1px solid rgba(255,255,255,.18);box-shadow:0 0 28px rgba(20,171,255,.34),inset 0 0 12px rgba(255,255,255,.12)
+}
+.brand-mark img{width:100%;height:100%;display:block;object-fit:cover;border-radius:15px}
+.app-head h1{font-size:23px;letter-spacing:-.3px}
+.app-head .sub{color:#91B9D9;font-size:12px}
+.badge{color:#D6F6FF;background:rgba(17,160,239,.12);border-color:rgba(32,217,255,.30);box-shadow:inset 0 0 14px rgba(32,217,255,.05)}
+.scope-pill{
+  background:linear-gradient(135deg,rgba(10,42,80,.82),rgba(5,25,54,.78));
+  border-color:rgba(32,217,255,.17);box-shadow:0 12px 30px rgba(0,0,0,.16)
+}
+.scope-pill .lbl{color:#7FA2C5}.scope-pill b{color:#F2FAFF}
+.scope-sheet{background:rgba(5,27,59,.94);border-color:rgba(32,217,255,.18)}
+.chip{background:rgba(255,255,255,.035);border-color:rgba(32,217,255,.13)}
+.chip.active{background:linear-gradient(135deg,#087FEF,#20D9FF);box-shadow:0 7px 18px rgba(20,156,255,.22)}
+.home-hero{
+  position:relative;overflow:hidden;text-align:right;padding:20px 18px 18px;
+  background:linear-gradient(135deg,rgba(6,51,104,.92),rgba(6,26,57,.88));
+  border-color:rgba(32,217,255,.22);box-shadow:0 18px 42px rgba(0,0,0,.24)
+}
+.home-hero::before{content:"";position:absolute;width:180px;height:180px;border-radius:50%;inset:-75px auto auto -70px;background:rgba(32,217,255,.11);filter:blur(4px)}
+.home-hero::after{content:"";position:absolute;width:130px;height:130px;border:1px solid rgba(32,217,255,.12);border-radius:50%;inset:auto -60px -75px auto}
+.home-hero .ring{position:relative;z-index:1;width:76px;height:76px;margin:0 0 12px;border:1px solid rgba(32,217,255,.32);background:#061E42;box-shadow:0 0 32px rgba(20,156,255,.32);overflow:hidden}
+.home-hero .ring img{width:100%;height:100%;object-fit:cover}
+.home-hero h2{position:relative;z-index:1;font-size:20px;margin-bottom:3px}
+.home-hero p{position:relative;z-index:1;color:#A9D9F1;font-size:13px}
+.section-label{color:#91B0CE;margin-top:10px}
+.quick-grid{gap:11px}
+.quick-tile{
+  position:relative;overflow:hidden;min-height:112px;padding:15px 10px;
+  background:linear-gradient(145deg,rgba(7,38,77,.82),rgba(5,26,56,.76));
+  border-color:rgba(32,217,255,.15);box-shadow:0 10px 25px rgba(0,0,0,.14)
+}
+.quick-tile::after{content:"";position:absolute;width:70px;height:70px;border-radius:50%;background:rgba(32,217,255,.07);top:-38px;left:-22px}
+.quick-tile .ic{width:43px;height:43px;border-radius:13px;background:linear-gradient(145deg,#0A8EF3,#20D9FF)!important;box-shadow:0 8px 20px rgba(20,156,255,.22)}
+.quick-tile span{font-size:13px}
+.tip-card{background:linear-gradient(135deg,rgba(7,39,79,.78),rgba(4,24,50,.78));border-color:rgba(32,217,255,.14);color:#9FB8D1}
+.tip-card b{color:#F3F8FF}
+.panel{background:linear-gradient(145deg,rgba(7,34,70,.78),rgba(4,22,48,.82));border-color:rgba(32,217,255,.16);box-shadow:0 18px 45px rgba(0,0,0,.24)}
+.field label{color:#91ABC7}
+.field input,.field textarea,.field select{background:rgba(2,14,31,.52);border-color:rgba(32,217,255,.15);color:#F1F8FF}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:#20D9FF;box-shadow:0 0 0 3px rgba(32,217,255,.13)}
+.btn{background:linear-gradient(135deg,#0789F2,#20D9FF);box-shadow:0 11px 28px rgba(20,156,255,.25)}
+.card{background:linear-gradient(145deg,rgba(8,40,82,.82),rgba(4,24,51,.82));border-color:rgba(32,217,255,.14)}
+.card .subject{color:#BCEAFF;background:rgba(20,156,255,.11);border-color:rgba(32,217,255,.22)}
+.tabs{
+  width:min(calc(100% - 18px),570px);padding:7px 7px 8px;
+  background:rgba(2,14,32,.88);border-color:rgba(32,217,255,.20);box-shadow:0 18px 48px rgba(0,0,0,.60),0 0 28px rgba(0,118,220,.10)
+}
+.tab{color:#7896B5;border-radius:17px}
+.tab:hover{color:#D8F4FF}
+.tab.active{color:#20D9FF;background:rgba(20,156,255,.08)}
+.tab-home{margin-top:-25px}
+.tab-home .ic-wrap{width:49px;height:49px;background:linear-gradient(145deg,#0A8EF3,#20D9FF);box-shadow:0 9px 25px rgba(20,156,255,.38);border-color:rgba(2,14,32,.95)}
+.tab-home.active{background:transparent}
+.more-sheet{background:rgba(4,25,54,.96);border-color:rgba(32,217,255,.20)}
+.more-item:hover{background:rgba(32,217,255,.06)}
+.more-item .ic{background:linear-gradient(145deg,#0A8EF3,#20D9FF)!important}
+.footer-credit{color:rgba(169,210,234,.42)}
+.ai-note{color:#7898B8}
+.status{color:#89A7C4}
+@media(max-width:520px){.app-head{padding-top:15px}.brand-mark{width:50px;height:50px}.app-head h1{font-size:21px}.home-hero{padding:17px}.quick-tile{min-height:104px}}
+
 </style>
 </head>
 <body>
@@ -156,7 +269,7 @@
 
   <div class="app-head">
     <div class="brand-row">
-      <div class="brand-mark"><svg viewBox="0 0 32 32"><path fill="#F3F7F4" d="M4 17l12-1.6V28L4 26.4zM28 17L16 15.4V28l12-1.6z"/><path class="trace" d="M10 15V10H7V6"/><path class="trace" d="M16 14V4"/><path class="trace" d="M22 15V10h3V6"/></svg></div>
+      <div class="brand-mark"><img src="icon-512.png" alt="رفيق الطالب"></div>
       <div><h1>رفيق الطالب</h1><div class="sub">كلية تكنولوجيا المعلومات</div></div>
     </div>
     <span class="badge" id="totalBadge">٠ مساهمة</span>
@@ -194,7 +307,7 @@
 
   <div class="panel panel-active" data-panel="home">
     <div class="home-hero">
-      <div class="ring"><svg viewBox="0 0 24 24" fill="none" stroke="#BFE3FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V7l8-4 8 4v12"/><path d="M9 19v-6h6v6"/></svg></div>
+      <div class="ring"><img src="icon-512.png" alt="رفيق الطالب"></div>
       <h2 id="homeGreeting">أهلاً فيك 👋</h2>
       <p>خطوة صغيرة كل يوم بتصنع فرق كبير بآخر الفصل</p>
     </div>
