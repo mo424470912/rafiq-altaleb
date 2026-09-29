@@ -262,6 +262,16 @@ body::before{
 .status{color:#89A7C4}
 @media(max-width:520px){.app-head{padding-top:15px}.brand-mark{width:50px;height:50px}.app-head h1{font-size:21px}.home-hero{padding:17px}.quick-tile{min-height:104px}}
 
+
+  .progress-dashboard{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+  .progress-card{background:linear-gradient(145deg,rgba(8,43,87,.88),rgba(4,24,51,.9));border:1px solid rgba(32,217,255,.16);border-radius:17px;padding:13px;cursor:pointer;transition:.18s}
+  .progress-card:hover{transform:translateY(-2px);border-color:rgba(32,217,255,.32)}
+  .progress-card .pc-top{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom:8px}.progress-card .pc-name{font-size:12.5px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.progress-card .pc-value{font-family:'IBM Plex Mono';font-size:12px;color:#20D9FF}.progress-track{height:7px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden}.progress-track span{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,#0789F2,#20D9FF)}.progress-empty{grid-column:1/-1;text-align:center;color:#7898B8;padding:14px;border:1px dashed rgba(32,217,255,.18);border-radius:15px}
+  .study-stats-card{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px}.study-stat{padding:12px 8px;text-align:center;background:rgba(3,20,42,.55);border:1px solid rgba(32,217,255,.12);border-radius:15px}.study-stat b{display:block;font:700 18px 'IBM Plex Mono';color:#20D9FF}.study-stat span{font-size:10.5px;color:#7898B8}
+  .course-row-clickable{cursor:pointer;transition:.16s}.course-row-clickable:hover{background:rgba(32,217,255,.07)!important}.curric tr.course-row-clickable{cursor:pointer;transition:.16s}.curric tr.course-row-clickable:hover{background:rgba(32,217,255,.07)}.course-open{margin-inline-start:auto;color:#20D9FF;font-size:11px;font-weight:700;opacity:.8}
+  .subject-modal,.quiz-modal{position:fixed;inset:0;z-index:80;display:none}.subject-modal.open,.quiz-modal.open{display:block}.subject-modal-backdrop{position:absolute;inset:0;background:rgba(1,7,18,.72);backdrop-filter:blur(8px)}.subject-modal-card{position:relative;width:min(calc(100% - 26px),620px);max-height:min(86vh,760px);overflow:auto;margin:7vh auto 0;background:linear-gradient(145deg,rgba(6,35,72,.98),rgba(3,18,39,.99));border:1px solid rgba(32,217,255,.2);border-radius:24px;padding:20px;box-shadow:0 25px 80px rgba(0,0,0,.6)}.modal-close{position:absolute;top:10px;inset-inline-end:12px;width:36px;height:36px;border:1px solid rgba(255,255,255,.12);border-radius:50%;background:rgba(255,255,255,.06);color:#dff8ff;font-size:25px;cursor:pointer}.subject-title{padding-inline-end:40px}.subject-title h2{margin:0 0 3px;font:700 22px var(--display);color:#fff}.subject-title p{margin:0;color:#8eabc6;font-size:12px}.subject-progress{margin:18px 0;padding:15px;border:1px solid rgba(32,217,255,.13);border-radius:17px;background:rgba(2,16,34,.45)}.subject-progress-head{display:flex;justify-content:space-between;align-items:center;font-size:12px;margin-bottom:9px}.subject-progress-head b{color:#20D9FF}.progress-range{width:100%;accent-color:#20D9FF}.subject-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:12px}.subject-actions button{border:1px solid rgba(32,217,255,.16);border-radius:13px;padding:12px 8px;background:rgba(32,217,255,.07);color:#e8f8ff;font:inherit;font-weight:700;cursor:pointer}.subject-actions button.primary{background:linear-gradient(135deg,#0789F2,#20D9FF);color:#031321;border:none}.subject-links{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}.subject-links button{border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.045);color:#a9c3dc;border-radius:12px;padding:9px 5px;font:inherit;font-size:11px;cursor:pointer}.quiz-q{padding:14px;border:1px solid rgba(32,217,255,.13);border-radius:16px;margin:10px 0;background:rgba(2,16,34,.45)}.quiz-q h3{font-size:14px;margin:0 0 10px}.quiz-options{display:grid;gap:7px}.quiz-option{display:block;padding:10px;border:1px solid rgba(255,255,255,.1);border-radius:11px;background:rgba(255,255,255,.035);cursor:pointer;font-size:12.5px}.quiz-option input{margin-inline-end:7px;accent-color:#20D9FF}.quiz-submit{margin-top:10px}.quiz-result{padding:15px;border-radius:16px;background:rgba(32,217,255,.08);border:1px solid rgba(32,217,255,.2);text-align:center}.quiz-result b{font:700 26px 'IBM Plex Mono';color:#20D9FF}.quiz-loading{text-align:center;padding:35px;color:#9bb7d1}.pomodoro-card{margin-top:16px;padding:16px;border-radius:19px;border:1px solid rgba(32,217,255,.15);background:linear-gradient(145deg,rgba(7,39,79,.72),rgba(3,20,43,.72));text-align:center}.pomodoro-head{display:flex;justify-content:space-between;align-items:center;text-align:start}.pomodoro-head b{display:block;font-size:14px}.pomodoro-head span:not(.pomodoro-badge){display:block;color:#7898B8;font-size:10.5px}.pomodoro-badge{padding:4px 9px;border-radius:999px;background:rgba(32,217,255,.1);color:#20D9FF;font-size:10px}.pomodoro-time{font:700 48px/1.15 'IBM Plex Mono';letter-spacing:1px;margin:12px 0 7px;color:#F2FBFF}.pomodoro-progress{height:6px;background:rgba(255,255,255,.07);border-radius:999px;overflow:hidden}.pomodoro-progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,#0789F2,#20D9FF);transition:width .4s}.pomodoro-actions{display:flex;gap:8px;margin-top:12px}.pomodoro-actions .btn{flex:1}.pomodoro-presets{display:flex;justify-content:center;gap:6px;margin-top:10px;overflow:auto}.pomodoro-presets .chip{font-size:11px;padding:6px 10px}.pomodoro-meta{display:flex;justify-content:space-around;color:#7898B8;font-size:10.5px;margin-top:11px}.pomodoro-meta b{color:#c9eaff}.ai-quick-actions{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:9px}.ai-quick-actions button{border:1px solid rgba(32,217,255,.13);background:rgba(32,217,255,.06);color:#b8d9ed;border-radius:12px;padding:9px 4px;font:inherit;font-size:10.5px;cursor:pointer}.ai-quick-actions button:hover{background:rgba(32,217,255,.11)}
+  @media(max-width:520px){.progress-dashboard{grid-template-columns:1fr 1fr}.subject-actions{grid-template-columns:1fr 1fr}.ai-quick-actions{grid-template-columns:1fr 1fr}.ai-quick-actions button:last-child{grid-column:1/-1}.study-stats-card{grid-template-columns:repeat(3,1fr)}}
+
 </style>
 </head>
 <body>
@@ -311,15 +321,37 @@ body::before{
       <h2 id="homeGreeting">أهلاً فيك 👋</h2>
       <p>خطوة صغيرة كل يوم بتصنع فرق كبير بآخر الفصل</p>
     </div>
+    <div class="section-label">تقدمك الدراسي 📊</div>
+    <div class="progress-dashboard" id="progressDashboard"></div>
+    <div class="section-label">مذاكرتك هذا الأسبوع ⏱️</div>
+    <div class="study-stats-card" id="studyStatsCard"></div>
     <div class="section-label">أدوات سريعة ⚡</div>
     <div class="quick-grid">
       <div class="quick-tile" onclick="switchTab('summaries')"><div class="ic" style="background:linear-gradient(135deg,#3B9EFF,#38D6FF)"><svg viewBox="0 0 16 16"><rect x="3" y="2" width="10" height="12" rx="1"/><line x1="5.3" y1="5.5" x2="10.7" y2="5.5"/><line x1="5.3" y1="8" x2="10.7" y2="8"/></svg></div><span>مكتبة الملخصات</span></div>
       <div class="quick-tile" onclick="switchTab('deadlines')"><div class="ic" style="background:linear-gradient(135deg,#7C5CFF,#3B9EFF)"><svg viewBox="0 0 16 16"><rect x="2.3" y="3" width="11.4" height="10.5" rx="1"/><line x1="2.3" y1="6" x2="13.7" y2="6"/></svg></div><span>المواعيد</span></div>
       <div class="quick-tile" onclick="switchTab('questions')"><div class="ic" style="background:linear-gradient(135deg,#2ED47A,#38D6FF)"><svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="6.3"/><path d="M6.1 6.2c0-1.1.9-2 2-2 1 0 1.8.7 1.8 1.7 0 1.4-1.9 1.3-1.9 3"/></svg></div><span>الأسئلة</span></div>
       <div class="quick-tile" onclick="switchTab('plan')"><div class="ic" style="background:linear-gradient(135deg,#FFB13B,#FF6270)"><svg viewBox="0 0 16 16"><circle cx="8" cy="8.6" r="5.7"/><path d="M8 5.2v3.4l2.6 1.5"/></svg></div><span>خطة المذاكرة</span></div>
+      <div class="quick-tile" onclick="switchTab('curriculum')"><div class="ic"><svg viewBox="0 0 16 16"><path d="M2.5 3.2c1.8-.9 3.7-.7 5.5.4v9c-1.8-1.1-3.7-1.3-5.5-.4z"/><path d="M13.5 3.2c-1.8-.9-3.7-.7-5.5.4v9c1.8-1.1 3.7-1.3 5.5-.4z"/></svg></div><span>موادك الدراسية</span></div>
+      <div class="quick-tile" onclick="startQuickQuiz()"><div class="ic"><svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="6.2"/><path d="M6.1 6.1a2 2 0 1 1 3.5 1.3c-.8.7-1.6.9-1.6 2"/><circle cx="8" cy="11.8" r=".4" fill="currentColor" stroke="none"/></svg></div><span>اختبار سريع</span></div>
     </div>
     <div class="section-label">نصيحة اليوم 💡</div>
     <div class="tip-card"><div id="tipOfDay">لا تؤجل اللي تقدر تعمله اليوم إلى بكرا.</div></div>
+  </div>
+
+  <div class="subject-modal" id="subjectModal" aria-hidden="true">
+    <div class="subject-modal-backdrop" onclick="closeSubjectModal()"></div>
+    <div class="subject-modal-card" role="dialog" aria-modal="true">
+      <button class="modal-close" onclick="closeSubjectModal()" aria-label="إغلاق">×</button>
+      <div id="subjectModalContent"></div>
+    </div>
+  </div>
+
+  <div class="quiz-modal" id="quizModal" aria-hidden="true">
+    <div class="subject-modal-backdrop" onclick="closeQuiz()"></div>
+    <div class="subject-modal-card quiz-card-modal" role="dialog" aria-modal="true">
+      <button class="modal-close" onclick="closeQuiz()" aria-label="إغلاق">×</button>
+      <div id="quizContent"></div>
+    </div>
   </div>
 
   <div class="panel" data-panel="summaries" style="display:none">
@@ -445,6 +477,11 @@ body::before{
       <div class="ai-note" id="ai-file-note"></div>
     </div>
     <button class="btn" onclick="askAI()">اسأل المساعد</button>
+    <div class="ai-quick-actions">
+      <button onclick="quickAI('اشرح لي هذا الموضوع كأنك مدرس خصوصي، ثم اسألني 3 أسئلة قصيرة للتأكد أني فهمت.')">👨‍🏫 مدرس خصوصي</button>
+      <button onclick="quickAI('حوّل هذا المحتوى إلى مراجعة ذكية: أهم النقاط ثم 5 أسئلة اختيار من متعدد بدون إظهار الإجابات أولاً.')">🧠 مراجعة ذكية</button>
+      <button onclick="quickAI('اختبرني في هذا الموضوع سؤالاً سؤالاً، وانتظر إجابتي قبل السؤال التالي، وصحح لي باختصار.')">🎯 اختبرني</button>
+    </div>
     <div class="ai-note">المساعد بيشرح ويرشدك لطريقة الحل، ومش بيعمل الواجب مكانك.</div>
     <div class="status" id="ai-status" style="display:none"></div>
     <div id="ai-result" style="display:none; margin-top:14px;">
@@ -621,10 +658,10 @@ function renderCurriculum(){
     return;
   }
   const rows = sem.courses.map(c => `
-    <tr>
+    <tr class="course-row-clickable" onclick="openSubject('${escapeHtml(c.name).replace(/'/g,"\'")}','${escapeHtml(c.code).replace(/'/g,"\'")}','${escapeHtml(c.type).replace(/'/g,"\'")}')">
       <td class="code">${escapeHtml(c.code)}</td>
       <td>${escapeHtml(c.name)}</td>
-      <td>${escapeHtml(c.type)}</td>
+      <td>${escapeHtml(c.type)} <span class="course-open">فتح</span></td>
     </tr>`).join('');
   box.innerHTML = `
     <table class="curric">
@@ -700,27 +737,28 @@ function selectTrack(t){
   document.querySelectorAll('.track-chip').forEach(c => c.classList.toggle('active', c.dataset.track === t));
   updateScopeUI();
   rememberTrack(t);
-  renderAll();
+  renderAll(); renderProgressDashboard();
 }
 function selectYear(y){
   currentYear = y;
   document.querySelectorAll('.year-chip').forEach(c => c.classList.toggle('active', c.dataset.year === y));
   updateScopeUI();
   rememberYear(y);
-  renderAll();
+  renderAll(); renderProgressDashboard();
 }
 function selectSemester(s){
   currentSemester = s;
   document.querySelectorAll('.sem-chip').forEach(c => c.classList.toggle('active', c.dataset.sem === s));
   updateScopeUI();
   rememberSemester(s);
-  renderAll();
+  renderAll(); renderProgressDashboard();
 }
 function selectPlanVersion(p){
   currentPlanVersion = p;
   document.querySelectorAll('.plan-chip').forEach(c => c.classList.toggle('active', c.dataset.plan === p));
   updateScopeUI();
   rememberPlanVersion(p);
+  renderProgressDashboard();
 }
 document.querySelectorAll('.plan-chip').forEach(c => c.addEventListener('click', () => selectPlanVersion(c.dataset.plan)));
 
@@ -1254,6 +1292,83 @@ async function addExamAsDeadline(){
     alert('انضاف الاختبار لقسم المواعيد.');
   }catch(err){ alert('تعذر الإضافة، تأكد من الاتصال بالإنترنت.'); }
 }
+
+
+// ===== إضافات رفيق الطالب: التقدم + صفحات المواد + الاختبارات + Pomodoro + مدرس ذكي =====
+const PROGRESS_KEY = 'rafiq-course-progress-v1';
+const STUDY_KEY = 'rafiq-study-log-v1';
+let pomodoro = { minutes:25, seconds:0, running:false, mode:'study', interval:null, totalSeconds:25*60 };
+let activeQuiz = null;
+
+function getProgress(){ try{return JSON.parse(localStorage.getItem(PROGRESS_KEY)||'{}')}catch(e){return {}} }
+function setProgress(course,value){ const p=getProgress(); p[course]=Math.max(0,Math.min(100,Number(value)||0)); localStorage.setItem(PROGRESS_KEY,JSON.stringify(p)); renderProgressDashboard(); }
+function getStudyLog(){ try{return JSON.parse(localStorage.getItem(STUDY_KEY)||'[]')}catch(e){return []} }
+function addStudyMinutes(minutes){ if(!minutes) return; const log=getStudyLog(); const today=new Date().toISOString().slice(0,10); log.push({date:today,minutes:Number(minutes)}); localStorage.setItem(STUDY_KEY,JSON.stringify(log.slice(-500))); renderStudyStats(); }
+function currentCourses(){
+  const source=currentPlanVersion==='legacy'?LEGACY_CURRICULA[currentTrack]:CURRICULA[currentTrack];
+  if(currentTrack==='general'||!source) return [];
+  const sem=source.plan[currentYear+'-'+currentSemester];
+  return sem && sem.courses ? sem.courses : [];
+}
+function renderProgressDashboard(){
+  const box=document.getElementById('progressDashboard'); if(!box) return;
+  const courses=currentCourses(); const p=getProgress();
+  if(!courses.length){ box.innerHTML='<div class="progress-empty">اختَر تخصصك وسنتك وفصلك من أعلى الصفحة لعرض تقدمك الدراسي.</div>'; return; }
+  const selected=courses.slice(0,4);
+  const avg=Math.round(courses.reduce((a,c)=>a+(Number(p[c.name])||0),0)/courses.length);
+  box.innerHTML=selected.map(c=>{const v=Number(p[c.name])||0;return `<div class="progress-card" onclick="openSubject('${escapeHtml(c.name).replace(/'/g,"\\'")}','${escapeHtml(c.code).replace(/'/g,"\\'")}','${escapeHtml(c.type).replace(/'/g,"\\'")}')"><div class="pc-top"><span class="pc-name">${escapeHtml(c.name)}</span><span class="pc-value">${v}%</span></div><div class="progress-track"><span style="width:${v}%"></span></div></div>`}).join('') + `<div class="progress-empty" style="padding:10px">متوسط إنجاز مواد الفصل: <b style="color:#20D9FF">${avg}%</b> — اضغط على أي مادة لتحديث تقدمك.</div>`;
+}
+function renderStudyStats(){
+  const box=document.getElementById('studyStatsCard'); if(!box) return;
+  const log=getStudyLog(), today=new Date().toISOString().slice(0,10), now=new Date();
+  const todayMin=log.filter(x=>x.date===today).reduce((a,x)=>a+Number(x.minutes||0),0);
+  const weekStart=new Date(now); weekStart.setHours(0,0,0,0); weekStart.setDate(weekStart.getDate()-((weekStart.getDay()+6)%7));
+  const weekMin=log.filter(x=>new Date(x.date+'T00:00:00')>=weekStart).reduce((a,x)=>a+Number(x.minutes||0),0);
+  const sessions=log.filter(x=>x.date===today).length;
+  box.innerHTML=`<div class="study-stat"><b>${todayMin}</b><span>دقيقة اليوم</span></div><div class="study-stat"><b>${weekMin}</b><span>دقيقة هذا الأسبوع</span></div><div class="study-stat"><b>${sessions}</b><span>جلسة اليوم</span></div>`;
+  const s=document.getElementById('pomodoroSessions'), w=document.getElementById('pomodoroWeek'); if(s)s.textContent=sessions; if(w)w.textContent=weekMin+' د';
+}
+function formatTime(total){const m=Math.floor(total/60),s=total%60;return String(m).padStart(2,'0')+':'+String(s).padStart(2,'0')}
+function renderPomodoro(){
+  const time=document.getElementById('pomodoroTime'), prog=document.getElementById('pomodoroProgress'), start=document.getElementById('pomodoroStart'), mode=document.getElementById('pomodoroMode');
+  if(!time)return; const total=pomodoro.totalSeconds; const left=pomodoro.minutes*60+pomodoro.seconds; time.textContent=formatTime(left); prog.style.width=((total-left)/total*100)+'%'; start.textContent=pomodoro.running?'إيقاف مؤقت':'ابدأ الجلسة'; mode.textContent=pomodoro.mode==='study'?'دراسة':'استراحة';
+}
+function setPomodoroPreset(min,el){clearInterval(pomodoro.interval);pomodoro={minutes:min,seconds:0,running:false,mode:'study',interval:null,totalSeconds:min*60};document.querySelectorAll('.pomodoro-presets .chip').forEach(x=>x.classList.remove('active'));if(el)el.classList.add('active');renderPomodoro();}
+function togglePomodoro(){
+  if(pomodoro.running){clearInterval(pomodoro.interval);pomodoro.running=false;renderPomodoro();return;}
+  pomodoro.running=true; renderPomodoro();
+  pomodoro.interval=setInterval(()=>{let left=pomodoro.minutes*60+pomodoro.seconds;if(left<=0){clearInterval(pomodoro.interval);pomodoro.running=false;if(pomodoro.mode==='study'){addStudyMinutes(Math.round(pomodoro.totalSeconds/60));alert('أحسنت! خلصت جلسة تركيز 🎉 خذ استراحة قصيرة.');pomodoro.mode='break';pomodoro.minutes=5;pomodoro.seconds=0;pomodoro.totalSeconds=300;}else{alert('انتهت الاستراحة، جاهز لجلسة جديدة؟');pomodoro.mode='study';pomodoro.minutes=25;pomodoro.seconds=0;pomodoro.totalSeconds=1500;}renderPomodoro();return;}left--;pomodoro.minutes=Math.floor(left/60);pomodoro.seconds=left%60;renderPomodoro();},1000);
+}
+function resetPomodoro(){clearInterval(pomodoro.interval);pomodoro={minutes:25,seconds:0,running:false,mode:'study',interval:null,totalSeconds:1500};renderPomodoro();}
+function openSubject(name,code,type){
+  const p=getProgress(), value=Number(p[name])||0;
+  const subjectItems=itemsFor('summaries').filter(x=>x.subject===name).slice(0,3), qItems=itemsFor('questions').filter(x=>x.subject===name);
+  document.getElementById('subjectModalContent').innerHTML=`<div class="subject-title"><h2>${escapeHtml(name)}</h2><p>${escapeHtml(code)} · ${escapeHtml(type)}</p></div><div class="subject-progress"><div class="subject-progress-head"><span>تقدمك في المادة</span><b id="subjectProgressValue">${value}%</b></div><input class="progress-range" id="subjectProgressRange" type="range" min="0" max="100" step="5" value="${value}" oninput="setSubjectProgress('${escapeHtml(name).replace(/'/g,"\\'")}',this.value)"><div class="progress-track" style="margin-top:9px"><span id="subjectProgressBar" style="width:${value}%"></span></div></div><div class="subject-actions"><button class="primary" onclick="startSubjectStudy('${escapeHtml(name).replace(/'/g,"\\'")}')">📚 ابدأ المذاكرة</button><button onclick="startSubjectQuiz('${escapeHtml(name).replace(/'/g,"\\'")}')">📝 اختبار 5 أسئلة</button></div><div class="subject-links"><button onclick="useSubjectInAI('${escapeHtml(name).replace(/'/g,"\\'")}')">🤖 اسأل المساعد</button><button onclick="filterSubjectContent('summaries','${escapeHtml(name).replace(/'/g,"\\'")}')">📄 ${subjectItems.length} ملخص</button><button onclick="filterSubjectContent('questions','${escapeHtml(name).replace(/'/g,"\\'")}')">❓ ${qItems.length} سؤال</button></div><div class="ai-note" style="margin-top:14px">تقدر تغيّر نسبة الإنجاز يدويًا، والتقدم محفوظ على جهازك.</div>`;
+  const m=document.getElementById('subjectModal');m.classList.add('open');m.setAttribute('aria-hidden','false');
+}
+function setSubjectProgress(name,value){setProgress(name,value);const v=Math.round(Number(value)||0);const a=document.getElementById('subjectProgressValue'),b=document.getElementById('subjectProgressBar');if(a)a.textContent=v+'%';if(b)b.style.width=v+'%';}
+function closeSubjectModal(){const m=document.getElementById('subjectModal');m.classList.remove('open');m.setAttribute('aria-hidden','true')}
+function startSubjectStudy(name){document.getElementById('p-subject').value=name;closeSubjectModal();switchTab('plan');document.getElementById('p-subject').focus();}
+function useSubjectInAI(name){document.getElementById('ai-subject').value=name;closeSubjectModal();switchTab('ai');document.getElementById('ai-input').focus();}
+function filterSubjectContent(tab,name){closeSubjectModal();switchTab(tab);setTimeout(()=>{const inputId=tab==='summaries'?'s-subject':tab==='questions'?'q-subject':null;if(inputId){document.getElementById(inputId).value=name;document.getElementById(inputId).dispatchEvent(new Event('input'));}renderAll();},80);}
+async function startQuickQuiz(){const courses=currentCourses();if(!courses.length)return alert('اختَر تخصصك وسنتك وفصلك أولاً.');startSubjectQuiz(courses[0].name)}
+async function startSubjectQuiz(subject){
+  const modal=document.getElementById('quizModal'), box=document.getElementById('quizContent');modal.classList.add('open');modal.setAttribute('aria-hidden','false');box.innerHTML=`<div class="quiz-loading">🤖 جاري تجهيز اختبار قصير في <b>${escapeHtml(subject)}</b>...</div>`;
+  try{
+    const prompt=`أنشئ اختباراً تعليمياً لطالب جامعي في مادة "${subject}" من 5 أسئلة اختيار من متعدد. يجب أن يكون مبنياً على المفاهيم الأكاديمية الشائعة للمادة، وكل سؤال له 4 خيارات وإجابة صحيحة واحدة. أعد JSON فقط بهذا الشكل: {"questions":[{"q":"...","options":["...","...","...","..."],"answer":0}]} ولا تضع أي نص خارج JSON. اللغة العربية.`;
+    const raw=await callGemini([{text:prompt}],2200); const clean=raw.replace(/^```json\s*/i,'').replace(/^```\s*/,'').replace(/```\s*$/,'').trim(); const data=JSON.parse(clean); if(!data.questions||data.questions.length<1)throw new Error('تعذر إنشاء الأسئلة');
+    activeQuiz={subject,questions:data.questions.slice(0,5)};renderQuiz();
+  }catch(e){box.innerHTML=`<div class="quiz-loading">تعذر تجهيز الاختبار حالياً.<br><small>${escapeHtml(e.message||'خطأ غير معروف')}</small><br><button class="btn" style="margin-top:12px" onclick="closeQuiz()">إغلاق</button></div>`}
+}
+function renderQuiz(){
+  const box=document.getElementById('quizContent'); if(!activeQuiz)return; box.innerHTML=`<div class="subject-title"><h2>اختبار سريع 🎯</h2><p>${escapeHtml(activeQuiz.subject)} · 5 أسئلة</p></div>`+activeQuiz.questions.map((q,i)=>`<div class="quiz-q"><h3>${i+1}. ${escapeHtml(q.q)}</h3><div class="quiz-options">${(q.options||[]).map((o,j)=>`<label class="quiz-option"><input type="radio" name="quiz${i}" value="${j}"> ${escapeHtml(o)}</label>`).join('')}</div></div>`).join('')+`<button class="btn quiz-submit" onclick="submitQuiz()">صحّح الاختبار</button>`;
+}
+function submitQuiz(){if(!activeQuiz)return;let score=0;activeQuiz.questions.forEach((q,i)=>{const a=document.querySelector(`input[name="quiz${i}"]:checked`);if(a&&Number(a.value)===Number(q.answer))score++});const pct=Math.round(score/activeQuiz.questions.length*100);const old=Number(getProgress()[activeQuiz.subject])||0;setProgress(activeQuiz.subject,Math.max(old,pct));document.getElementById('quizContent').innerHTML=`<div class="quiz-result"><div>نتيجتك</div><b>${score}/${activeQuiz.questions.length}</b><div style="margin-top:6px">${pct>=80?'ممتاز! 🔥':pct>=60?'جيد جداً، كمل مراجعة. 💪':'راجع الأساسيات وجرب مرة ثانية. 📚'}</div><button class="btn" style="margin-top:14px" onclick="startSubjectQuiz('${escapeHtml(activeQuiz.subject).replace(/'/g,"\\'")}')">اختبار جديد</button></div>`;}
+function closeQuiz(){const m=document.getElementById('quizModal');m.classList.remove('open');m.setAttribute('aria-hidden','true');activeQuiz=null}
+function quickAI(text){document.getElementById('ai-input').value=text+(document.getElementById('ai-subject').value?'\n\nالمادة: '+document.getElementById('ai-subject').value:'');askAI();}
+// تحديث لوحة التقدم والإحصائيات عند التنقل أو تغيير النطاق
+const oldSwitchTab=switchTab; switchTab=function(tab){oldSwitchTab(tab);if(tab==='home'){renderProgressDashboard();renderStudyStats()}if(tab==='plan'){renderPomodoro();renderStudyStats()}};
+renderProgressDashboard();renderStudyStats();renderPomodoro();
 
 function toggleScope(){ document.getElementById('scopeWrap').classList.toggle('scope-open'); }
 try{ if(!localStorage.getItem('my-track')) document.getElementById('scopeWrap').classList.add('scope-open'); }catch(e){}
