@@ -520,7 +520,7 @@ let remoteProgressLoaded = false;
 // حط مفتاح API الخاص فيك من Google AI Studio هون (مجاني تماماً بدون بطاقة، من aistudio.google.com)
 // تنبيه: أي حد يفتح كود هاد الملف يقدر يشوف المفتاح ويستخدمه — خيار مقصود اخترناه للبساطة.
 const GEMINI_API_KEY = "AQ.Ab8RN6JED-6pvx123Hzq1p_KAOMqkCs7_7ZHFLmbgYsVYVtWyA";
-const GEMINI_MODEL = "gemini-flash-lite-latest";
+const GEMINI_MODEL = "gemini-3.5-flash-lite";
 
 const CURRICULA = {"cs":{"dept":"علم الحاسوب","plan":{"1-1":{"year":"1","semester":"1","courses":[{"code":"CSCI 1102","name":"مهارات حاسوبية","type":"متطلب كلية"},{"code":"CSCI 1104","name":"برمجة (1) - عملي","type":"تخصص"},{"code":"CSCI 1304","name":"برمجة (1)","type":"تخصص"},{"code":"WDMM 1305","name":"تجربة المستخدم","type":"متطلب كلية"},{"code":"CSCI 1309","name":"تصميم منطقي","type":"تخصص"},{"code":"QURN 1101","name":"قرآن كريم (1)","type":"متطلب جامعة"},{"code":"CSCI 1307","name":"رياضيات منفصلة","type":"تخصص"}],"total_hours":"15"},"1-2":{"year":"1","semester":"2","courses":[{"code":"CSCI 1106","name":"برمجة (2) - عملي","type":"تخصص"},{"code":"CSCI 1306","name":"برمجة (2)","type":"تخصص"},{"code":"CSCI 1308","name":"الإحصاء والاحتمالات (تكنولوجيا المعلومات)","type":"تخصص"},{"code":"SICT 1307","name":"اللغة الإنجليزية (تكنولوجيا المعلومات)","type":"متطلب كلية"},{"code":"SDEV 1101","name":"برمجة ويب (1) عملي","type":"تخصص"},{"code":"SDEV 1301","name":"برمجة ويب (1)","type":"تخصص"},{"code":"QURN 2101","name":"قرآن كريم (2)","type":"متطلب جامعة"}],"total_hours":"15"},"2-1":{"year":"2","semester":"1","courses":[{"code":"ARAB 1202","name":"اللغة العربية (نحو وصرف)","type":"متطلب جامعة"},{"code":"CSCI 2109","name":"بنية البيانات والخوارزميات (عملي)","type":"تخصص"},{"code":"CSCI 2114","name":"قواعد البيانات (1) - عملي","type":"تخصص"},{"code":"CSCI 2315","name":"الذكاء الاصطناعي","type":"تخصص"},{"code":"CSCI 2313","name":"هندسة البرمجيات","type":"تخصص"},{"code":"CSCI 2314","name":"قواعد البيانات (1)","type":"تخصص"},{"code":"CSCI 2309","name":"بنية البيانات والخوارزميات","type":"تخصص"}],"total_hours":"16"},"2-2":{"year":"2","semester":"2","courses":[{"code":"CSCI 2122","name":"البرمجة وتحليل البيانات عملي","type":"تخصص"},{"code":"CSCI 2201","name":"قواعد البيانات (2)","type":"تخصص"},{"code":"CSCI 2317","name":"عمارة الكمبيوتر","type":"تخصص"},{"code":"VOLN 1000","name":"عمل تطوعي/ 60 ساعة","type":"متطلب جامعة"},{"code":"SDEV 2106","name":"برمجة ويب (2) عملي","type":"تخصص"},{"code":"SDEV 2306","name":"برمجة ويب (2)","type":"تخصص"},{"code":"SHAR 1202","name":"دراسات في الفقه","type":"متطلب جامعة"},{"code":"CSCI 2322","name":"البرمجة وتحليل البيانات","type":"تخصص"}],"total_hours":"15"},"3-1":{"year":"3","semester":"1","courses":[{"code":"CSCI 3106","name":"نظم التشغيل - عملي","type":"تخصص"},{"code":"CSCI 3304","name":"نظرية الأوتوماتا","type":"تخصص"},{"code":"QURN 3101","name":"قرآن كريم (3)","type":"متطلب جامعة"},{"code":"CSCI 3314","name":"تحليل وتصميم الخوارزميات","type":"تخصص"},{"code":"CSCI 3426","name":"تعليم الآلة","type":"تخصص"},{"code":"CSCI 3306","name":"نظم التشغيل","type":"تخصص"}],"total_hours":"15"},"3-2":{"year":"3","semester":"2","courses":[{"code":"AQID 3306","name":"دراسات في العقيدة","type":"متطلب جامعة"},{"code":"CSCI 3007","name":"تدريب ميداني","type":"تخصص"},{"code":"CSCI 3122","name":"شبكات الكمبيوتر - عملي","type":"تخصص"},{"code":"SICT 3314","name":"ريادة الأعمال والعمل الحر","type":"متطلب كلية"},{"code":"CSCI 3324","name":"التعلم العميق","type":"تخصص"},{"code":"CSCI 3327","name":"الأمن السيبراني","type":"تخصص"},{"code":"QURN 4102","name":"قرآن كريم (4)","type":"متطلب جامعة"},{"code":"CSCI 3322","name":"شبكات الكمبيوتر","type":"تخصص"}],"total_hours":"17"},"4-1":{"year":"4","semester":"1","courses":[{"code":"CSCI 4108","name":"بحث تخرج","type":"متطلب كلية"},{"code":"CSCI 4302","name":"رسومات الحاسب","type":"تخصص"},{"code":"SICT 4308","name":"عمليات تعلم الآلة السحابية","type":"تخصص"},{"code":"OPTI 4214","name":"متطلب جامعة اختياري (1)","type":"متطلب جامعة"},{"code":"OPTI 4311","name":"متطلب تخصص اختياري (1)","type":"تخصص"},{"code":"CSCI 4306","name":"تصميم المترجمات","type":"تخصص"}],"total_hours":"15"},"4-2":{"year":"4","semester":"2","courses":[{"code":"CSCI 4208","name":"مشروع تخرج","type":"تخصص"},{"code":"OPTI 4212","name":"متطلب جامعة اختياري (2)","type":"متطلب جامعة"},{"code":"SICT 4201","name":"أخلاقيات المهنة","type":"متطلب كلية"},{"code":"OPTI 4310","name":"متطلب تخصص اختياري (3)","type":"تخصص"},{"code":"OPTI 4309","name":"متطلب تخصص اختياري (2)","type":"تخصص"}],"total_hours":"12"}}},"sdev":{"dept":"تطوير البرمجيات","plan":{"1-1":{"year":"1","semester":"1","courses":[{"code":"CSCI 1102","name":"مهارات حاسوبية","type":"متطلب كلية"},{"code":"CSCI 1104","name":"برمجة (1) - عملي","type":"متطلب كلية"},{"code":"CSCI 1304","name":"برمجة (1)","type":"متطلب كلية"},{"code":"WDMM 1305","name":"تجربة المستخدم","type":"متطلب كلية"},{"code":"CSCI 1309","name":"تصميم منطقي","type":"تخصص"},{"code":"QURN 1101","name":"قرآن كريم (1)","type":"متطلب جامعة"},{"code":"CSCI 1307","name":"رياضيات منفصلة","type":"تخصص"}],"total_hours":"15"},"1-2":{"year":"1","semester":"2","courses":[{"code":"CSCI 1106","name":"برمجة (2) - عملي","type":"تخصص"},{"code":"CSCI 1306","name":"برمجة (2)","type":"تخصص"},{"code":"CSCI 1308","name":"الإحصاء والاحتمالات (تكنولوجيا المعلومات)","type":"تخصص"},{"code":"SICT 1307","name":"اللغة الإنجليزية (تكنولوجيا المعلومات)","type":"متطلب كلية"},{"code":"SDEV 1101","name":"برمجة ويب (1) عملي","type":"تخصص"},{"code":"SDEV 1301","name":"برمجة ويب (1)","type":"تخصص"},{"code":"QURN 2101","name":"قرآن كريم (2)","type":"متطلب جامعة"}],"total_hours":"15"},"2-1":{"year":"2","semester":"1","courses":[{"code":"ARAB 1202","name":"اللغة العربية (نحو وصرف)","type":"متطلب جامعة"},{"code":"CSCI 2109","name":"بنية البيانات والخوارزميات (عملي)","type":"تخصص"},{"code":"CSCI 2114","name":"قواعد البيانات (1) - عملي","type":"تخصص"},{"code":"CSCI 2309","name":"بنية البيانات والخوارزميات","type":"تخصص"},{"code":"VOLN 1000","name":"عمل تطوعي/ 60 ساعة","type":"متطلب جامعة"},{"code":"CSCI 2315","name":"الذكاء الاصطناعي","type":"تخصص"},{"code":"QURN 3101","name":"قرآن كريم (3)","type":"متطلب جامعة"},{"code":"SDEV 2303","name":"هندسة المتطلبات","type":"تخصص"},{"code":"CSCI 2314","name":"قواعد البيانات (1)","type":"تخصص"}],"total_hours":"17"},"2-2":{"year":"2","semester":"2","courses":[{"code":"CSCI 2122","name":"البرمجة وتحليل البيانات عملي","type":"تخصص"},{"code":"CSCI 2201","name":"قواعد البيانات (2)","type":"تخصص"},{"code":"CSCI 2322","name":"البرمجة وتحليل البيانات","type":"تخصص"},{"code":"SHAR 1202","name":"دراسات في الفقه","type":"متطلب جامعة"},{"code":"SDEV 2306","name":"برمجة ويب (2)","type":"تخصص"},{"code":"SDEV 2307","name":"تصميم وعمارة البرمجيات","type":"تخصص"},{"code":"SDEV 2106","name":"برمجة ويب (2) عملي","type":"تخصص"}],"total_hours":"15"},"3-1":{"year":"3","semester":"1","courses":[{"code":"AQID 3306","name":"دراسات في العقيدة","type":"متطلب جامعة"},{"code":"CSCI 3306","name":"نظم التشغيل","type":"تخصص"},{"code":"SDEV 3308","name":"أطر تطوير البرمجيات","type":"تخصص"},{"code":"OPTI 3210","name":"متطلب جامعة اختياري (1)","type":"متطلب جامعة"},{"code":"SDEV 3301","name":"تطوير البرمجيات بمساعدة الذكاء الاصطناعي","type":"تخصص"},{"code":"CSCI 3314","name":"تحليل وتصميم الخوارزميات","type":"تخصص"}],"total_hours":"17"},"3-2":{"year":"3","semester":"2","courses":[{"code":"CSCI 3007","name":"تدريب ميداني","type":"تخصص"},{"code":"CSCI 3122","name":"شبكات الكمبيوتر - عملي","type":"تخصص"},{"code":"CSCI 3322","name":"شبكات الكمبيوتر","type":"تخصص"},{"code":"SICT 3314","name":"ريادة الأعمال والعمل الحر","type":"متطلب كلية"},{"code":"QURN 4102","name":"قرآن كريم (4)","type":"متطلب جامعة"},{"code":"SDEV 3305","name":"فحص البرمجيات وتأكيد الجودة","type":"تخصص"},{"code":"SDEV 3309","name":"منهجيات تطوير البرمجيات","type":"تخصص"},{"code":"OPTI 4212","name":"متطلب جامعة اختياري (2)","type":"متطلب جامعة"}],"total_hours":"16"},"4-1":{"year":"4","semester":"1","courses":[{"code":"CSCI 4108","name":"بحث تخرج","type":"متطلب كلية"},{"code":"OPTI 3301","name":"متطلب اختياري (1)","type":"تخصص"},{"code":"SICT 4313","name":"أنظمة موزعة وسحابية","type":"تخصص"},{"code":"SDEV 4305","name":"إدارة مشاريع البرمجيات","type":"تخصص"},{"code":"SDEV 4303","name":"أمن البرمجيات","type":"تخصص"}],"total_hours":"13"},"4-2":{"year":"4","semester":"2","courses":[{"code":"CSCI 4208","name":"مشروع تخرج","type":"تخصص"},{"code":"OPTI 4302","name":"متطلب اختياري (2)","type":"تخصص"},{"code":"SICT 4201","name":"أخلاقيات المهنة","type":"متطلب كلية"},{"code":"SDEV 4304","name":"هندسة برمجيات متقدمة","type":"تخصص"},{"code":"OPTI 4303","name":"متطلب اختياري (3)","type":"تخصص"}],"total_hours":"13"}}},"multimedia":{"dept":"تكنولوجيا الوسائط المتعددة وتطوير الويب","plan":{"1-1":{"year":"1","semester":"1","courses":[{"code":"QURN 1101","name":"قرآن كريم (1)","type":"متطلب جامعة"},{"code":"SHAR 1202","name":"دراسات في الفقه","type":"متطلب جامعة"},{"code":"WDMM 1101","name":"مقدمة للحاسوب والانترنت (عملي)","type":"تخصص"},{"code":"WDMM 1403","name":"تكنولوجيا الوسائط المتعددة وتأليفها","type":"تخصص"},{"code":"WDMM 1301","name":"مقدمة للحاسوب والإنترنت","type":"تخصص"},{"code":"WDMM 1402","name":"برمجة الوسائط (1)","type":"تخصص"},{"code":"WDMM 1102","name":"رسم هندسي","type":"تخصص"}],"total_hours":"16"},"1-2":{"year":"1","semester":"2","courses":[{"code":"HADT 1202","name":"دراسات في السيرة","type":"متطلب جامعة"},{"code":"SICT 1307","name":"اللغة الإنجليزية (تكنولوجيا المعلومات)","type":"متطلب كلية"},{"code":"WDMM 1407","name":"أساسيات التصميم وتجربة المستخدم","type":"تخصص"},{"code":"WDMM 1202","name":"تصميم وإخراج المطبوعات","type":"تخصص"},{"code":"WDMM 1405","name":"برمجة الوسائط (2)","type":"تخصص"},{"code":"WDMM 1103","name":"الرسم الحر","type":"تخصص"}],"total_hours":"16"},"2-1":{"year":"2","semester":"1","courses":[{"code":"ARAB 1202","name":"اللغة العربية (نحو وصرف)","type":"متطلب جامعة"},{"code":"WDMM 2304","name":"تحرير الصوت والصورة الرقمية","type":"تخصص"},{"code":"WDMM 2413","name":"التمثيل المرئي للبيانات","type":"تخصص"},{"code":"WDMM 2410","name":"قواعد بيانات الوسائط المتعددة والويب","type":"تخصص"},{"code":"WDMM 2401","name":"تطوير الويب (1)","type":"تخصص"}],"total_hours":"17"},"2-2":{"year":"2","semester":"2","courses":[{"code":"QURN 2101","name":"قرآن كريم (2)","type":"متطلب جامعة"},{"code":"SHAR 2207","name":"النظم الإسلامية","type":"متطلب جامعة"},{"code":"VOLN 1000","name":"عمل تطوعي/ 60 ساعة","type":"متطلب جامعة"},{"code":"WDMM 2408","name":"تقنيات إنتاج الوسائط الرقمية","type":"تخصص"},{"code":"WDMM 2307","name":"أنظمة إدارة المحتوى","type":"تخصص"},{"code":"WDMM 2403","name":"تطوير الويب (2)","type":"تخصص"},{"code":"WDMM 2302","name":"الرياضيات للوسائط المتعددة","type":"متطلب كلية"}],"total_hours":"17"},"3-1":{"year":"3","semester":"1","courses":[{"code":"QURN 2201","name":"دراسات في القرآن وعلومه","type":"متطلب جامعة"},{"code":"QURN 3101","name":"قرآن كريم (3)","type":"متطلب جامعة"},{"code":"WDMM 3409","name":"التأثير والتركيب المرئي","type":"تخصص"},{"code":"WDMM 3314","name":"هندسة الوسائط والويب","type":"تخصص"},{"code":"WDMM 3407","name":"تجسيد النماذج ثلاثية الأبعاد","type":"تخصص"},{"code":"WDMM 3302","name":"إدارة الأعمال والتجارة الإلكترونية","type":"تخصص"}],"total_hours":"17"},"3-2":{"year":"3","semester":"2","courses":[{"code":"CSCI 3007","name":"تدريب ميداني","type":"تخصص"},{"code":"OPTI 3206","name":"متطلب جامعة اختياري","type":"متطلب جامعة"},{"code":"OPTI 3301","name":"متطلب اختياري (1)","type":"تخصص"},{"code":"WDMM 3411","name":"الرسوم المتحركة","type":"تخصص"},{"code":"SICT 3314","name":"ريادة الأعمال والعمل الحر","type":"تخصص"},{"code":"WDMM 3406","name":"تحريك المجسمات ثلاثية الأبعاد","type":"تخصص"},{"code":"QURN 4102","name":"قرآن كريم (4)","type":"متطلب جامعة"}],"total_hours":"17"},"4-1":{"year":"4","semester":"1","courses":[{"code":"AQID 3306","name":"دراسات في العقيدة","type":"متطلب جامعة"},{"code":"CSCI 4108","name":"بحث تخرج","type":"متطلب كلية"},{"code":"WDMM 4403","name":"أمن الويب","type":"تخصص"},{"code":"POLS 3220","name":"دراسات فلسطينية","type":"متطلب جامعة"},{"code":"WDMM 4305","name":"برمجة الألعاب الإلكترونية","type":"تخصص"},{"code":"OPTI 4302","name":"متطلب اختياري (2)","type":"تخصص"}],"total_hours":"16"},"4-2":{"year":"4","semester":"2","courses":[{"code":"AQID 3201","name":"حاضر العالم الإسلامي","type":"متطلب جامعة"},{"code":"CSCI 4208","name":"مشروع تخرج","type":"تخصص"},{"code":"WDMM 4306","name":"تطبيقات الهواتف الذكية","type":"تخصص"},{"code":"OPTI 4303","name":"متطلب اختياري (3)","type":"تخصص"},{"code":"SICT 4201","name":"أخلاقيات المهنة","type":"تخصص"},{"code":"HADT 4204","name":"دراسات في الحديث الشريف","type":"متطلب جامعة"}],"total_hours":"14"}}},"itsys":{"dept":"تكنولوجيا المعلومات","plan":{"1-1":{"year":"1","semester":"1","courses":[{"code":"ARAB 1202","name":"اللغة العربية (نحو وصرف)","type":"متطلب جامعة"},{"code":"CSCI 1103","name":"مقدمة في الحوسبة - عملي","type":"متطلب كلية"},{"code":"CSCI 1104","name":"برمجة (1) - عملي","type":"متطلب كلية"},{"code":"SHAR 1202","name":"دراسات في الفقه","type":"متطلب جامعة"},{"code":"CSCI 1304","name":"برمجة (1)","type":"متطلب كلية"},{"code":"CSCI 1307","name":"رياضيات منفصلة","type":"متطلب كلية"},{"code":"QURN 1101","name":"قرآن كريم (1)","type":"متطلب جامعة"},{"code":"CSCI 1303","name":"مقدمة في الحوسبة","type":"متطلب كلية"}],"total_hours":"16"},"1-2":{"year":"1","semester":"2","courses":[{"code":"CSCI 1106","name":"برمجة (2) - عملي","type":"متطلب كلية"},{"code":"CSCI 1306","name":"برمجة (2)","type":"متطلب كلية"},{"code":"CSCI 1308","name":"الإحصاء والاحتمالات (تكنولوجيا المعلومات)","type":"تخصص"},{"code":"SICT 1307","name":"اللغة الإنجليزية (تكنولوجيا المعلومات)","type":"متطلب كلية"},{"code":"HADT 1202","name":"دراسات في السيرة","type":"متطلب جامعة"},{"code":"QURN 2201","name":"دراسات في القرآن وعلومه","type":"متطلب جامعة"},{"code":"CSCI 1309","name":"تصميم منطقي","type":"متطلب كلية"}],"total_hours":"17"},"2-1":{"year":"2","semester":"1","courses":[{"code":"CSCI 2109","name":"بنية البيانات والخوارزميات (عملي)","type":"تخصص"},{"code":"CSCI 2114","name":"قواعد البيانات (1) - عملي","type":"تخصص"},{"code":"CSCI 2309","name":"بنية البيانات والخوارزميات","type":"تخصص"},{"code":"SDEV 2305","name":"برمجة ويب (1)","type":"تخصص"},{"code":"CSCI 2314","name":"قواعد البيانات (1)","type":"تخصص"},{"code":"OPTI 3206","name":"متطلب جامعة اختياري","type":"متطلب جامعة"},{"code":"SDEV 2105","name":"برمجة ويب (1) عملي","type":"تخصص"},{"code":"CSCI 2313","name":"هندسة البرمجيات","type":"تخصص"}],"total_hours":"17"},"2-2":{"year":"2","semester":"2","courses":[{"code":"CSCI 2108","name":"برمجة (3) - عملي","type":"تخصص"},{"code":"CSCI 2110","name":"عمارة الكمبيوتر ولغة التجميع - عملي","type":"تخصص"},{"code":"CSCI 2201","name":"قواعد البيانات (2)","type":"تخصص"},{"code":"CSCI 2308","name":"برمجة (3)","type":"تخصص"},{"code":"VOLN 1000","name":"عمل تطوعي/ 60 ساعة","type":"متطلب جامعة"},{"code":"QURN 2101","name":"قرآن كريم (2)","type":"متطلب جامعة"},{"code":"SDEV 2106","name":"برمجة ويب (2) عملي","type":"تخصص"},{"code":"SDEV 2306","name":"برمجة ويب (2)","type":"تخصص"},{"code":"SHAR 2207","name":"النظم الإسلامية","type":"متطلب جامعة"},{"code":"CSCI 2310","name":"عمارة الكمبيوتر ولغة التجميع","type":"تخصص"}],"total_hours":"17"},"3-1":{"year":"3","semester":"1","courses":[{"code":"CSCI 3106","name":"نظم التشغيل - عملي","type":"تخصص"},{"code":"CSCI 3306","name":"نظم التشغيل","type":"تخصص"},{"code":"CSCI 3310","name":"الرياضيات والحوسبة","type":"تخصص"},{"code":"SICT 3306","name":"أنظمة المعلومات","type":"تخصص"},{"code":"CSCI 3320","name":"علم البيانات","type":"تخصص"},{"code":"QURN 3101","name":"قرآن كريم (3)","type":"متطلب جامعة"},{"code":"CSCI 3314","name":"تحليل وتصميم الخوارزميات","type":"تخصص"}],"total_hours":"17"},"3-2":{"year":"3","semester":"2","courses":[{"code":"AQID 3306","name":"دراسات في العقيدة","type":"متطلب جامعة"},{"code":"CSCI 3007","name":"تدريب ميداني","type":"تخصص"},{"code":"CSCI 3122","name":"شبكات الكمبيوتر - عملي","type":"تخصص"},{"code":"WDMM 2307","name":"أنظمة إدارة المحتوى","type":"تخصص"},{"code":"SICT 3314","name":"ريادة الأعمال والعمل الحر","type":"تخصص"},{"code":"SICT 3321","name":"أمن المعلومات","type":"تخصص"},{"code":"CSCI 3322","name":"شبكات الكمبيوتر","type":"تخصص"}],"total_hours":"16"},"4-1":{"year":"4","semester":"1","courses":[{"code":"CSCI 4108","name":"بحث تخرج","type":"تخصص"},{"code":"OPTI 3301","name":"متطلب اختياري (1)","type":"تخصص"},{"code":"POLS 3220","name":"دراسات فلسطينية","type":"متطلب جامعة"},{"code":"WDMM 3302","name":"إدارة الأعمال والتجارة الإلكترونية","type":"تخصص"},{"code":"SICT 4312","name":"حوسبة الهواتف المتنقلة","type":"تخصص"},{"code":"SICT 4313","name":"أنظمة موزعة وسحابية","type":"تخصص"},{"code":"QURN 4102","name":"قرآن كريم (4)","type":"متطلب جامعة"}],"total_hours":"16"},"4-2":{"year":"4","semester":"2","courses":[{"code":"AQID 3201","name":"حاضر العالم الإسلامي","type":"متطلب جامعة"},{"code":"CSCI 4208","name":"مشروع تخرج","type":"تخصص"},{"code":"SICT 4338","name":"الأنظمة الذكية ودعم القرار","type":"تخصص"},{"code":"OPTI 4302","name":"متطلب اختياري (2)","type":"تخصص"},{"code":"SICT 4201","name":"أخلاقيات المهنة","type":"تخصص"},{"code":"HADT 4204","name":"دراسات في الحديث الشريف","type":"متطلب جامعة"}],"total_hours":"14"}}},"webcomp":{"dept":"حوسبة الويب","plan":{"1-1":{"year":"1","semester":"1","courses":[{"code":"ARAB 1202","name":"اللغة العربية (نحو وصرف)","type":"متطلب جامعة"},{"code":"CSCI 1103","name":"مقدمة في الحوسبة - عملي","type":"متطلب كلية"},{"code":"CSCI 1104","name":"برمجة (1) - عملي","type":"متطلب كلية"},{"code":"SHAR 1202","name":"دراسات في الفقه","type":"متطلب جامعة"},{"code":"CSCI 1304","name":"برمجة (1)","type":"متطلب كلية"},{"code":"CSCI 1307","name":"رياضيات منفصلة","type":"متطلب كلية"},{"code":"QURN 1101","name":"قرآن كريم (1)","type":"متطلب جامعة"},{"code":"CSCI 1303","name":"مقدمة في الحوسبة","type":"متطلب كلية"}],"total_hours":"16"},"1-2":{"year":"1","semester":"2","courses":[{"code":"CSCI 1106","name":"برمجة (2) - عملي","type":"متطلب كلية"},{"code":"CSCI 1306","name":"برمجة (2)","type":"متطلب كلية"},{"code":"CSCI 1308","name":"الإحصاء والاحتمالات (تكنولوجيا المعلومات)","type":"تخصص"},{"code":"SICT 1307","name":"اللغة الإنجليزية (تكنولوجيا المعلومات)","type":"متطلب كلية"},{"code":"HADT 1202","name":"دراسات في السيرة","type":"متطلب جامعة"},{"code":"QURN 2201","name":"دراسات في القرآن وعلومه","type":"متطلب جامعة"},{"code":"CSCI 1309","name":"تصميم منطقي","type":"متطلب كلية"}],"total_hours":"17"},"2-1":{"year":"2","semester":"1","courses":[{"code":"CSCI 2109","name":"بنية البيانات والخوارزميات (عملي)","type":"تخصص"},{"code":"CSCI 2114","name":"قواعد البيانات (1) - عملي","type":"تخصص"},{"code":"CSCI 2309","name":"بنية البيانات والخوارزميات","type":"تخصص"},{"code":"SDEV 2305","name":"برمجة ويب (1)","type":"تخصص"},{"code":"CSCI 2314","name":"قواعد البيانات (1)","type":"تخصص"},{"code":"OPTI 3206","name":"متطلب جامعة اختياري","type":"متطلب جامعة"},{"code":"SDEV 2105","name":"برمجة ويب (1) عملي","type":"تخصص"},{"code":"CSCI 2313","name":"هندسة البرمجيات","type":"تخصص"}],"total_hours":"17"},"2-2":{"year":"2","semester":"2","courses":[{"code":"CSCI 2201","name":"قواعد البيانات (2)","type":"تخصص"},{"code":"QURN 2101","name":"قرآن كريم (2)","type":"متطلب جامعة"},{"code":"SDEV 2106","name":"برمجة ويب (2) عملي","type":"تخصص"},{"code":"WEBC 2301","name":"تجربة المستخدم للويب","type":"تخصص"},{"code":"SHAR 2207","name":"النظم الإسلامية","type":"متطلب جامعة"},{"code":"VOLN 1000","name":"عمل تطوعي/ 60 ساعة","type":"متطلب جامعة"},{"code":"WDMM 2307","name":"أنظمة إدارة المحتوى","type":"تخصص"},{"code":"SDEV 2306","name":"برمجة ويب (2)","type":"تخصص"}],"total_hours":"15"},"3-1":{"year":"3","semester":"1","courses":[{"code":"CSCI 3106","name":"نظم التشغيل - عملي","type":"تخصص"},{"code":"CSCI 3306","name":"نظم التشغيل","type":"تخصص"},{"code":"CSCI 3310","name":"الرياضيات والحوسبة","type":"تخصص"},{"code":"WEBC 3301","name":"برمجة ويب (3)","type":"تخصص"},{"code":"HADT 4204","name":"دراسات في الحديث الشريف","type":"متطلب جامعة"},{"code":"QURN 3101","name":"قرآن كريم (3)","type":"متطلب جامعة"},{"code":"WEBC 3101","name":"برمجة ويب (3) عملي","type":"تخصص"},{"code":"CSCI 3314","name":"تحليل وتصميم الخوارزميات","type":"تخصص"}],"total_hours":"17"},"3-2":{"year":"3","semester":"2","courses":[{"code":"AQID 3306","name":"دراسات في العقيدة","type":"متطلب جامعة"},{"code":"CSCI 3007","name":"تدريب ميداني","type":"تخصص"},{"code":"CSCI 3122","name":"شبكات الكمبيوتر - عملي","type":"تخصص"},{"code":"WEBC 3304","name":"أطر تطوير الويب","type":"تخصص"},{"code":"SICT 3314","name":"ريادة الأعمال والعمل الحر","type":"تخصص"},{"code":"WEBC 3303","name":"معمارية برمجيات الويب","type":"تخصص"},{"code":"CSCI 3322","name":"شبكات الكمبيوتر","type":"تخصص"}],"total_hours":"16"},"4-1":{"year":"4","semester":"1","courses":[{"code":"CSCI 4108","name":"بحث تخرج","type":"تخصص"},{"code":"OPTI 4301","name":"متطلب اختياري (1)","type":"تخصص"},{"code":"POLS 3220","name":"دراسات فلسطينية","type":"متطلب جامعة"},{"code":"WEBC 4303","name":"تنقيب الويب","type":"تخصص"},{"code":"WDMM 4403","name":"أمن الويب","type":"تخصص"},{"code":"WEBC 4301","name":"برمجة ويب متقدمة","type":"تخصص"},{"code":"QURN 4102","name":"قرآن كريم (4)","type":"متطلب جامعة"}],"total_hours":"17"},"4-2":{"year":"4","semester":"2","courses":[{"code":"AQID 3201","name":"حاضر العالم الإسلامي","type":"متطلب جامعة"},{"code":"CSCI 4208","name":"مشروع تخرج","type":"تخصص"},{"code":"WEBC 4303","name":"تنقيب الويب","type":"تخصص"},{"code":"SICT 4201","name":"أخلاقيات المهنة","type":"تخصص"},{"code":"WEBC 4302","name":"إدارة خوادم الويب","type":"تخصص"},{"code":"OPTI 4302","name":"متطلب اختياري (2)","type":"تخصص"}],"total_hours":"15"}}}};
 
@@ -829,12 +829,19 @@ function currentScopeFields(){
   return { track: currentTrack, year: currentTrack === 'general' ? null : currentYear, semester: currentTrack === 'general' ? null : currentSemester };
 }
 
+function currentOwnerFields(){
+  if(!currentUser) throw new Error('يجب تسجيل الدخول أولاً.');
+  return { ownerUid: currentUser.uid, ownerEmail: currentUser.email || '' };
+}
+function isOwner(item){ return !!currentUser && item && item.ownerUid === currentUser.uid; }
+
 function scopeFieldsFor(prefix){
   if(currentTrack === 'general') return { track: 'general', year: null, semester: null };
   return { track: currentTrack, year: document.getElementById(prefix + '-year').value, semester: document.getElementById(prefix + '-sem').value };
 }
 
 async function addSummary(btn){
+  if(!currentUser) return alert('سجّل الدخول أولاً حتى يصبح المنشور مرتبطًا بحسابك.');
   const subject = document.getElementById('s-subject').value.trim();
   const title = document.getElementById('s-title').value.trim();
   const content = document.getElementById('s-content').value.trim();
@@ -843,7 +850,7 @@ async function addSummary(btn){
   if(!subject || !title || !content) return alert('عبّي المادة والعنوان والمحتوى قبل النشر.');
   if(btn) btn.disabled = true;
   try{
-    await db.collection('summaries').add(Object.assign({ subject, title, content, video, name: name || 'مجهول', date: Date.now() }, scopeFieldsFor('s')));
+    await db.collection('summaries').add(Object.assign({ subject, title, content, video, name: name || (currentUser.email || 'طالب'), date: Date.now() }, scopeFieldsFor('s'), currentOwnerFields()));
     document.getElementById('s-title').value = '';
     document.getElementById('s-content').value = '';
     document.getElementById('s-video').value = '';
@@ -854,6 +861,7 @@ async function addSummary(btn){
 }
 
 async function addDeadline(btn){
+  if(!currentUser) return alert('سجّل الدخول أولاً حتى يصبح المنشور مرتبطًا بحسابك.');
   const subject = document.getElementById('d-subject').value.trim();
   const title = document.getElementById('d-title').value.trim();
   const type = document.getElementById('d-type').value;
@@ -863,7 +871,7 @@ async function addDeadline(btn){
   if(!subject || !title || !date) return alert('عبّي المادة والعنوان والتاريخ قبل الإضافة.');
   if(btn) btn.disabled = true;
   try{
-    await db.collection('deadlines').add(Object.assign({ subject, title, type, date, notes, name: name || 'مجهول' }, scopeFieldsFor('d')));
+    await db.collection('deadlines').add(Object.assign({ subject, title, type, date, notes, name: name || (currentUser.email || 'طالب') }, scopeFieldsFor('d'), currentOwnerFields()));
     document.getElementById('d-title').value = '';
     document.getElementById('d-notes').value = '';
     rememberName(name);
@@ -872,13 +880,14 @@ async function addDeadline(btn){
 }
 
 async function addQuestion(btn){
+  if(!currentUser) return alert('سجّل الدخول أولاً حتى يصبح المنشور مرتبطًا بحسابك.');
   const subject = document.getElementById('q-subject').value.trim();
   const question = document.getElementById('q-question').value.trim();
   const name = document.getElementById('q-name').value.trim();
   if(!subject || !question) return alert('عبّي المادة والسؤال قبل النشر.');
   if(btn) btn.disabled = true;
   try{
-    await db.collection('questions').add(Object.assign({ subject, question, answer: '', name: name || 'مجهول', date: Date.now() }, scopeFieldsFor('q')));
+    await db.collection('questions').add(Object.assign({ subject, question, answer: '', name: name || (currentUser.email || 'طالب'), date: Date.now() }, scopeFieldsFor('q'), currentOwnerFields()));
     document.getElementById('q-question').value = '';
     rememberName(name);
   }catch(err){ showError('تعذر نشر السؤال، تأكد من الاتصال بالإنترنت.'); }
@@ -886,14 +895,45 @@ async function addQuestion(btn){
 }
 
 async function removeItem(list, id){
-  if(!confirm('حذف هذا العنصر؟')) return;
+  const item = (state[list] || []).find(i => i.id === id);
+  if(!currentUser) return alert('سجّل الدخول أولاً.');
+  if(!isOwner(item)) return alert('هذا المنشور ليس ملكًا لحسابك.');
+  if(!confirm('حذف هذا المنشور؟')) return;
   try{ await db.collection(list).doc(id).delete(); }
   catch(err){ alert('تعذر الحذف، تأكد من الاتصال بالإنترنت.'); }
+}
+
+async function editItem(list, id){
+  const item = (state[list] || []).find(i => i.id === id);
+  if(!currentUser) return alert('سجّل الدخول أولاً.');
+  if(!isOwner(item)) return alert('هذا المنشور ليس ملكًا لحسابك.');
+  if(list === 'summaries'){
+    const title = prompt('عنوان الملخص:', item.title || ''); if(title === null) return;
+    const content = prompt('محتوى الملخص:', item.content || ''); if(content === null) return;
+    const video = prompt('رابط المحاضرة (اختياري):', item.video || ''); if(video === null) return;
+    if(!title.trim() || !content.trim()) return alert('العنوان والمحتوى مطلوبان.');
+    try{ await db.collection(list).doc(id).update({title:title.trim(),content:content.trim(),video:video.trim(),updatedAt:firebase.firestore.FieldValue.serverTimestamp()}); }
+    catch(err){ alert('تعذر تعديل الملخص.'); }
+  } else if(list === 'deadlines'){
+    const title = prompt('عنوان الموعد/الاختبار:', item.title || ''); if(title === null) return;
+    const date = prompt('التاريخ YYYY-MM-DD:', item.date || ''); if(date === null) return;
+    const notes = prompt('ملاحظات:', item.notes || ''); if(notes === null) return;
+    if(!title.trim() || !date.trim()) return alert('العنوان والتاريخ مطلوبان.');
+    try{ await db.collection(list).doc(id).update({title:title.trim(),date:date.trim(),notes:notes.trim(),updatedAt:firebase.firestore.FieldValue.serverTimestamp()}); }
+    catch(err){ alert('تعذر تعديل الموعد.'); }
+  } else if(list === 'questions'){
+    const question = prompt('السؤال:', item.question || ''); if(question === null) return;
+    if(!question.trim()) return alert('السؤال مطلوب.');
+    try{ await db.collection(list).doc(id).update({question:question.trim(),updatedAt:firebase.firestore.FieldValue.serverTimestamp()}); }
+    catch(err){ alert('تعذر تعديل السؤال.'); }
+  }
 }
 
 async function answerQuestion(id){
   const q = state.questions.find(i => i.id === id);
   if(!q) return;
+  // الإجابة ليست ملكية المنشور؛ لكن تعديل/إضافة الإجابة متاح حاليًا للطالب المسجل.
+  if(!currentUser) return alert('سجّل الدخول أولاً.');
   const ans = prompt('اكتب الإجابة:', q.answer || '');
   if(ans === null) return;
   try{ await db.collection('questions').doc(id).update({ answer: ans.trim() }); }
@@ -941,7 +981,7 @@ function renderSummaries(){
           <span class="subject">${escapeHtml(item.subject)}</span>
           <h3>${escapeHtml(item.title)}</h3>
         </div>
-        <button class="btn secondary" onclick="removeItem('summaries','${item.id}')">حذف</button>
+        ${isOwner(item) ? `<div style="display:flex;gap:6px"><button class="btn secondary" onclick="editItem('summaries','${item.id}')">تعديل</button><button class="btn secondary" onclick="removeItem('summaries','${item.id}')">حذف</button></div>` : ''}
       </div>
       <p>${escapeHtml(item.content)}</p>
       ${item.video ? `<p>🎬 <a href="${escapeHtml(item.video)}" target="_blank" rel="noopener" style="color:var(--accent-ink);">رابط المحاضرة</a></p>` : ''}
@@ -978,7 +1018,7 @@ function renderDeadlines(){
           <span class="subject">${escapeHtml(item.subject)} · ${escapeHtml(item.type)}</span>
           <h3>${escapeHtml(item.title)}</h3>
         </div>
-        <button class="btn secondary" onclick="removeItem('deadlines','${item.id}')">حذف</button>
+        ${isOwner(item) ? `<div style="display:flex;gap:6px"><button class="btn secondary" onclick="editItem('deadlines','${item.id}')">تعديل</button><button class="btn secondary" onclick="removeItem('deadlines','${item.id}')">حذف</button></div>` : ''}
       </div>
       ${item.notes ? `<p>${escapeHtml(item.notes)}</p>` : ''}
       <div class="meta"><span>${escapeHtml(item.name)} · ${when}</span><span class="date">${formatArabicDate(item.date)}</span></div>
@@ -1004,7 +1044,7 @@ function renderQuestions(){
           <span class="subject">${escapeHtml(item.subject)}</span>
           <h3>${escapeHtml(item.question)}</h3>
         </div>
-        <button class="btn secondary" onclick="removeItem('questions','${item.id}')">حذف</button>
+        ${isOwner(item) ? `<div style="display:flex;gap:6px"><button class="btn secondary" onclick="editItem('questions','${item.id}')">تعديل</button><button class="btn secondary" onclick="removeItem('questions','${item.id}')">حذف</button></div>` : ''}
       </div>
       ${item.answer ? `<p>${escapeHtml(item.answer)}</p>` : ''}
       <div class="meta">
@@ -1040,14 +1080,17 @@ function buildAIPrompt(action, input){
 
 function sleep(ms){ return new Promise(r => setTimeout(r, ms)); }
 
-async function callGemini(parts, maxTokens){
+async function callGemini(parts, maxTokens, options = {}){
   if(!GEMINI_API_KEY || GEMINI_API_KEY === "PASTE_YOUR_GEMINI_API_KEY_HERE"){
     throw new Error('المطوّر لسا ما حط مفتاح API تعت Google AI Studio بالكود. لازم ينحط قبل ما تشتغل هاي الميزة.');
   }
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${GEMINI_API_KEY}`;
   const body = JSON.stringify({
     contents: [{ parts }],
-    generationConfig: { maxOutputTokens: maxTokens }
+    generationConfig: {
+      maxOutputTokens: maxTokens,
+      ...(options.responseMimeType ? { responseMimeType: options.responseMimeType } : {})
+    }
   });
 
   const attempts = [0, 1500, 3500]; // محاولة فورية، وبعدها محاولتين بفاصل زمني لو النموذج مشغول
@@ -1067,6 +1110,10 @@ async function callGemini(parts, maxTokens){
       if(!response.ok){
         let detail = '';
         try{ const errBody = await response.json(); detail = errBody?.error?.message || JSON.stringify(errBody); }catch(e){ detail = await response.text().catch(() => ''); }
+        if(response.status === 400) throw new Error(`طلب غير صالح من Gemini (400)${detail ? ' — ' + detail : ''}`);
+        if(response.status === 401 || response.status === 403) throw new Error(`مفتاح Gemini غير صالح أو غير مسموح له باستخدام API (${response.status}). أنشئ مفتاحاً جديداً من Google AI Studio ثم ضعه في GEMINI_API_KEY.`);
+        if(response.status === 404) throw new Error(`نموذج Gemini غير متاح بهذا الاسم (${GEMINI_MODEL}).`);
+        if(response.status === 429) { lastErr = new Error('تم تجاوز حد الطلبات في Gemini مؤقتاً. انتظر قليلاً ثم حاول مرة أخرى.'); continue; }
         throw new Error(`رمز الخطأ ${response.status}${detail ? ' — ' + detail : ''}`);
       }
       const data = await response.json();
@@ -1131,12 +1178,13 @@ async function askAI(){
 }
 
 async function saveAIResultAsSummary(){
+  if(!currentUser) return alert('سجّل الدخول أولاً لحفظ النتيجة كملخص.');
   if(!lastAIResult) return;
   try{
     await db.collection('summaries').add(Object.assign({
       subject: lastAIResult.subject, title: lastAIResult.title,
-      content: lastAIResult.content, name: 'المساعد الذكي', date: Date.now()
-    }, currentScopeFields()));
+      content: lastAIResult.content, name: currentUser.email || 'المساعد الذكي', date: Date.now()
+    }, currentScopeFields(), currentOwnerFields()));
     alert('انحفظ الملخص بقسم "الملخصات" لنطاقك الحالي.');
   }catch(err){ alert('تعذر الحفظ، تأكد من الاتصال بالإنترنت.'); }
 }
@@ -1235,7 +1283,7 @@ async function buildStudyPlan(){
   const parts = fileBlocks.length ? [...fileBlocks, { text: promptText }] : [{ text: promptText }];
 
   try{
-    const rawText = await callGemini(parts, 3000);
+    const rawText = await callGemini(parts, 3000, { responseMimeType: "application/json" });
 
     let days = null;
     try{
@@ -1286,23 +1334,25 @@ async function buildStudyPlan(){
 }
 
 async function savePlanAsSummary(){
+  if(!currentUser) return alert('سجّل الدخول أولاً لحفظ الخطة كملخص.');
   if(!lastPlanResult) return;
   try{
     await db.collection('summaries').add(Object.assign({
       subject: lastPlanResult.subject, title: lastPlanResult.title,
-      content: lastPlanResult.content, name: 'المساعد الذكي', date: Date.now()
-    }, currentScopeFields()));
+      content: lastPlanResult.content, name: currentUser.email || 'المساعد الذكي', date: Date.now()
+    }, currentScopeFields(), currentOwnerFields()));
     alert('انحفظت خطة المذاكرة بقسم الملخصات.');
   }catch(err){ alert('تعذر الحفظ، تأكد من الاتصال بالإنترنت.'); }
 }
 
 async function addExamAsDeadline(){
+  if(!currentUser) return alert('سجّل الدخول أولاً لإضافة الموعد إلى حسابك.');
   if(!lastPlanExam) return;
   try{
     await db.collection('deadlines').add(Object.assign({
       subject: lastPlanExam.subject, title: lastPlanExam.title,
-      type: lastPlanExam.type, date: lastPlanExam.date, notes: lastPlanExam.notes, name: 'أنت'
-    }, currentScopeFields()));
+      type: lastPlanExam.type, date: lastPlanExam.date, notes: lastPlanExam.notes, name: currentUser.email || 'أنت'
+    }, currentScopeFields(), currentOwnerFields()));
     alert('انضاف الاختبار لقسم المواعيد.');
   }catch(err){ alert('تعذر الإضافة، تأكد من الاتصال بالإنترنت.'); }
 }
@@ -1416,7 +1466,7 @@ async function startSubjectQuiz(subject){
   const modal=document.getElementById('quizModal'), box=document.getElementById('quizContent');modal.classList.add('open');modal.setAttribute('aria-hidden','false');box.innerHTML=`<div class="quiz-loading">🤖 جاري تجهيز اختبار قصير في <b>${escapeHtml(subject)}</b>...</div>`;
   try{
     const prompt=`أنشئ اختباراً تعليمياً لطالب جامعي في مادة "${subject}" من 5 أسئلة اختيار من متعدد. يجب أن يكون مبنياً على المفاهيم الأكاديمية الشائعة للمادة، وكل سؤال له 4 خيارات وإجابة صحيحة واحدة. أعد JSON فقط بهذا الشكل: {"questions":[{"q":"...","options":["...","...","...","..."],"answer":0}]} ولا تضع أي نص خارج JSON. اللغة العربية.`;
-    const raw=await callGemini([{text:prompt}],2200); const clean=raw.replace(/^```json\s*/i,'').replace(/^```\s*/,'').replace(/```\s*$/,'').trim(); const data=JSON.parse(clean); if(!data.questions||data.questions.length<1)throw new Error('تعذر إنشاء الأسئلة');
+    const raw=await callGemini([{text:prompt}],2200, { responseMimeType: "application/json" }); const clean=raw.replace(/^```json\s*/i,'').replace(/^```\s*/,'').replace(/```\s*$/,'').trim(); const data=JSON.parse(clean); if(!data.questions||data.questions.length<1)throw new Error('تعذر إنشاء الأسئلة');
     activeQuiz={subject,questions:data.questions.slice(0,5)};renderQuiz();
   }catch(e){box.innerHTML=`<div class="quiz-loading">تعذر تجهيز الاختبار حالياً.<br><small>${escapeHtml(e.message||'خطأ غير معروف')}</small><br><button class="btn" style="margin-top:12px" onclick="closeQuiz()">إغلاق</button></div>`}
 }

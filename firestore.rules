@@ -1,0 +1,59 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // المحتوى المشترك: الجميع يستطيع القراءة، لكن النشر يحتاج حسابًا.
+    match /summaries/{summaryId} {
+      allow read: if true;
+      allow create: if request.auth != null
+                    && request.resource.data.ownerUid == request.auth.uid;
+      allow update: if request.auth != null
+                    && resource.data.ownerUid == request.auth.uid
+                    && request.resource.data.ownerUid == request.auth.uid;
+      allow delete: if request.auth != null
+                    && resource.data.ownerUid == request.auth.uid;
+    }
+
+    match /deadlines/{deadlineId} {
+      allow read: if true;
+      allow create: if request.auth != null
+                    && request.resource.data.ownerUid == request.auth.uid;
+      allow update: if request.auth != null
+                    && resource.data.ownerUid == request.auth.uid
+                    && request.resource.data.ownerUid == request.auth.uid;
+      allow delete: if request.auth != null
+                    && resource.data.ownerUid == request.auth.uid;
+    }
+
+    match /questions/{questionId} {
+      allow read: if true;
+      allow create: if request.auth != null
+                    && request.resource.data.ownerUid == request.auth.uid;
+      allow update: if request.auth != null
+                    && resource.data.ownerUid == request.auth.uid
+                    && request.resource.data.ownerUid == request.auth.uid;
+      allow delete: if request.auth != null
+                    && resource.data.ownerUid == request.auth.uid;
+    }
+
+    // المواد الإضافية المشتركة.
+    match /meta/{documentId} {
+      allow read: if true;
+      allow create, update: if request.auth != null;
+      allow delete: if false;
+    }
+
+    // تقدم الطالب وسجل مذاكرته: كل طالب يرى ويعدل بياناته فقط.
+    match /studentProgress/{userId} {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow create, update: if request.auth != null && request.auth.uid == userId;
+      allow delete: if false;
+    }
+
+    // منع أي وصول إلى Collections غير المعرفة أعلاه.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
